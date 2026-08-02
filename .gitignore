@@ -1,0 +1,19 @@
+# 環境・秘密情報
+.venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Chroma の永続データ（ingest.py で再生成できる）
+chroma_db/
+
+# レビューメモ（手元のみ）
+NOTES.md
+
+# Claude Code のローカル設定
+.claude/settings.local.json
+
+# macOS
+.DS_Store

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple RAG Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen p-8">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-2xl font-semibold mb-2">Simple RAG Demo</h1>
+    <p class="text-gray-500 mb-6 text-sm">
+      ChromaDB + OpenAI Embedding + GPT-4o-mini
+    </p>
+
+    <div class="flex gap-2 mb-6">
+      <input id="q" type="text" placeholder="質問を入力..."
+        class="flex-1 border rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+      <button onclick="ask()"
+        class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm hover:bg-blue-700">
+        送信
+      </button>
+    </div>
+
+    <div id="answer" class="hidden bg-white border rounded-xl p-5 mb-4">
+      <p class="text-xs text-gray-400 mb-2">回答</p>
+      <p id="answer-text" class="text-sm leading-relaxed"></p>
+    </div>
+
+    <div id="sources" class="hidden">
+      <p class="text-xs text-gray-400 mb-2">参照チャンク（類似度スコア順）</p>
+      <div id="sources-list" class="space-y-2"></div>
+    </div>
+  </div>
+
+<script>
+async function ask() {
+  const q = document.getElementById('q').value.trim();
+  if (!q) return;
+
+  const res = await fetch('/query', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({query: q, top_k: 4}),
+  });
+  const data = await res.json();
+
+  document.getElementById('answer-text').textContent = data.answer;
+  document.getElementById('answer').classList.remove('hidden');
+
+  const list = document.getElementById('sources-list');
+  list.innerHTML = data.sources.map(s => `
+    <div class="bg-gray-50 border rounded-lg p-3">
+      <div class="flex justify-between mb-1">
+        <span class="text-xs text-gray-500">${s.source}</span>
+        <span class="text-xs font-mono bg-blue-50 text-blue-700 px-2 py-0.5 rounded">
+          score: ${s.score}
+        </span>
+      </div>
+      <p class="text-xs text-gray-600 leading-relaxed">${s.text}</p>
+    </div>
+  `).join('');
+  document.getElementById('sources').classList.remove('hidden');
+}
+
+document.getElementById('q').addEventListener('keydown', e => {
+  if (e.key === 'Enter') ask();
+});
+</script>
+</body>
+</html>
