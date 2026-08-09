@@ -2,7 +2,9 @@
 
 A minimal Retrieval-Augmented Generation application built with FastAPI, ChromaDB, and the OpenAI API. Ask a question about your own text documents and get an answer grounded in them, along with the source chunks and their similarity scores.
 
-The project is deliberately small — roughly 150 lines of Python across three files — so the whole retrieval pipeline stays readable end to end.
+It ships two interfaces over the same index: a single-shot search page (`/`) and a chat page (`/chat`) that carries conversation history, so follow-up questions like "can I increase it?" resolve against what was just discussed.
+
+The project is deliberately small — roughly 320 lines of Python across five files — so the whole retrieval pipeline stays readable end to end. No LangChain, no LlamaIndex; every call to ChromaDB and the OpenAI API is written out.
 
 ## How it works
 
@@ -17,7 +19,28 @@ flowchart LR
 
 Ingestion and querying both embed text with the same model, `text-embedding-3-small`. ChromaDB stores the vectors and performs nearest-neighbour search; it never generates embeddings itself, since they are passed in explicitly. The retrieved chunks are inserted into a prompt that instructs the model to answer only from the supplied context, and to say so when the context does not cover the question.
 
-Each query costs two API calls: one embedding of the question, one chat completion.
+Each single-shot query costs two API calls: one embedding of the question, one chat completion.
+
+## Conversational mode
+
+Vector search has no memory. Embedding the literal question "can I increase it?" retrieves whatever happens to be near the word "increase" — the pronoun carries the actual subject, and the index cannot see it. `/chat` therefore runs a two-stage pipeline:
+
+```mermaid
+flowchart LR
+    Q[Follow-up question] --> C{history<br/>empty?}
+    C -->|yes| R[retrieve]
+    C -->|no| K[condense<br/>gpt-4o-mini] --> R
+    R -->|top-k chunks| L[gpt-4o-mini<br/>system + history + question]
+    L --> A[Answer + condensed query + sources]
+```
+
+**Condense** rewrites the question into a standalone search query using the conversation history, then **retrieval and generation** proceed as before, with the history included in the messages array. On the sample document the effect is measurable: "それは追加できますか？" condenses to "1ユーザーあたりの標準保存容量50GBは追加できますか？", and the top chunk's similarity rises from 0.390 to 0.459.
+
+The first turn of a session skips the condense call entirely — with no history there is nothing to resolve, so spending an API call on it would be waste. Subsequent turns cost three calls: condense, embed, answer.
+
+History lives in memory, keyed by session ID, capped at the last six exchanges. That is enough for a demo and deliberately not durable; a production deployment would swap `ConversationMemory` for Redis. Restarting the server — including any reload triggered by `--reload` — drops every session.
+
+The chat UI surfaces all of this: each answer is annotated with the condensed query that was actually searched, the retrieved chunks with their scores, and the current turn count.
 
 ## Requirements
 
@@ -45,7 +68,9 @@ Run the ingestion step first, then start the server:
 .venv/bin/uvicorn api:app --reload
 ```
 
-Open http://127.0.0.1:8000 and ask a question.
+Open http://127.0.0.1:8000 for single-shot search, or http://127.0.0.1:8000/chat for the conversational UI.
+
+Drop `--reload` when trying the chat page. Every file save restarts the process and clears the in-memory conversation history, which silently turns a follow-up question into a first turn.
 
 `ingest.py` reads every `.txt` file in `docs/` and prints how many chunks each one produced, followed by the total vector count. A total of `0` means no documents were found — check that `docs/` contains `.txt` files.
 
@@ -78,15 +103,51 @@ Response:
 
 `score` is cosine similarity in the range -1 to 1, derived as `1 - distance`. Higher is more similar. Sources come back in descending order of similarity.
 
+### Chat endpoints
+
+`POST /chat/new` issues a session ID and takes no body:
+
+```json
+{ "session_id": "53e334a1-bfc2-4708-ad3f-442cd49b052b" }
+```
+
+`POST /chat/message`
+
+```json
+{ "session_id": "53e334a1-...", "message": "それは追加できますか？" }
+```
+
+Response:
+
+```json
+{
+  "answer": "はい、容量を追加したい場合は情報システム部に申請フォームを...",
+  "condensed_question": "1ユーザーあたりの標準保存容量50GBは追加できますか？",
+  "sources": [
+    { "text": "...", "source": "docs/sample.txt", "score": 0.459 }
+  ],
+  "memory_stats": { "turns": 2, "total_chars": 141 }
+}
+```
+
+`DELETE /chat/{session_id}` clears that session's history. It is idempotent — an unknown session ID also returns 200.
+
+An empty `session_id` or `message` returns 400. Errors raised by the OpenAI client are wrapped as 503 with a fixed message; the exception text is never returned, since it can carry request URLs and key fragments. Tracebacks stay in the server log.
+
+Session IDs are unguessable UUIDs but are not authenticated — anyone holding one can read and extend that conversation. That is acceptable for a local demo and not for a deployment.
+
 ## Project structure
 
 ```
 .
-├── api.py               FastAPI app: serves the UI and the /query endpoint
+├── api.py               FastAPI app: serves both UIs, /query and /chat/*
 ├── ingest.py            Chunks documents, embeds them, writes to ChromaDB
 ├── retriever.py         Vector search and answer generation
+├── memory.py            Per-session conversation history (in-memory)
+├── chat_chain.py        Condense-question + RAG pipeline
 ├── templates/
-│   └── index.html       Single-page UI (Tailwind via CDN)
+│   ├── index.html       Single-shot search UI (Tailwind via CDN)
+│   └── chat.html        Chat UI with a debug panel
 ├── docs/
 │   └── sample.txt       Sample document for trying the demo
 ├── requirements.txt
@@ -103,14 +164,21 @@ Response:
 | Chunk overlap | `ingest.py` `OVERLAP` | 50 characters |
 | Chunks retrieved | `top_k` in the request body | 4 |
 | Embedding model | `ingest.py` / `retriever.py` | `text-embedding-3-small` |
-| Chat model | `retriever.py` | `gpt-4o-mini` |
+| Chat model | `retriever.py` / `chat_chain.py` | `gpt-4o-mini` |
+| History retained | `memory.py` `max_turns` | 6 exchanges |
+| Condense prompt | `chat_chain.py` `CONDENSE_PROMPT` | — |
+| Chat system prompt | `chat_chain.py` `SYSTEM_PROMPT` | — |
 
 Changing the embedding model changes the vector dimensionality, which ChromaDB will reject against an existing collection. Delete `chroma_db/` and re-ingest after switching models. The embedding model must always match between ingestion and querying.
 
 ## Known limitations
 
-- The UI renders chunk text with `innerHTML`, so a document containing `<` will break the source display. Switch to `textContent` before using it with real documents.
-- `api.py` appends `...` to every source excerpt, including chunks shorter than the 200-character truncation point.
+- `index.html` renders chunk text with `innerHTML`, so a document containing `<` will break the source display. `chat.html` escapes its interpolated values; the Week 1 page has not been backfilled.
+- `/query` appends `...` to every source excerpt, including chunks shorter than the 200-character truncation point. `/chat/message` only appends it when the text was actually cut.
+- Sessions are never evicted from `ConversationMemory`. Each `/chat/new` adds a dictionary entry that lives until the process exits or `DELETE /chat/{session_id}` is called, so a long-running server accumulates abandoned conversations.
+- Conversation history is per-process. Running more than one worker breaks the chat endpoints, since consecutive requests can land on workers with different history.
+- Condensing is one extra `gpt-4o-mini` call on the critical path of every follow-up turn, and it can misfire: an over-specific rewrite ("50GBは追加できますか？") narrows retrieval as easily as it sharpens it. The condensed query is exposed in the response precisely so this stays visible.
+- `/chat/message` has no `top_k` parameter and always retrieves 4 chunks.
 - `ingest.py` embeds all of a file's chunks in a single API call, which will hit request limits on very large documents.
 - Chunks of 50 characters or fewer are dropped, so a file consisting only of short lines yields nothing to embed and causes the embedding call to fail on an empty input.
 - The Tailwind CDN is loaded from the network; offline, the page still works but is unstyled.
