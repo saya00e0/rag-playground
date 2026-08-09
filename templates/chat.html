@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat RAG Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen p-8">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex justify-between items-start mb-6">
+      <div>
+        <h1 class="text-2xl font-semibold mb-2">Chat RAG Demo</h1>
+        <p class="text-gray-500 text-sm">
+          Condense Question + RAG ／ 会話履歴つき
+        </p>
+      </div>
+      <button onclick="resetChat()"
+        class="border border-gray-300 bg-white text-gray-600 px-4 py-2 rounded-lg text-sm hover:bg-gray-100">
+        会話をリセット
+      </button>
+    </div>
+
+    <div id="log" class="space-y-4 mb-6"></div>
+
+    <div class="flex gap-2">
+      <input id="q" type="text" placeholder="質問を入力..."
+        class="flex-1 border rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+      <button id="send" onclick="send()"
+        class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm hover:bg-blue-700 disabled:opacity-50">
+        送信
+      </button>
+    </div>
+  </div>
+
+<script>
+let sessionId = null;   // localStorage は使わず、リロードで新しい会話にする
+
+async function ensureSession() {
+  if (sessionId) return sessionId;
+  const res = await fetch('/chat/new', {method: 'POST'});
+  sessionId = (await res.json()).session_id;
+  return sessionId;
+}
+
+const log = document.getElementById('log');
+
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function addUserBubble(text) {
+  log.insertAdjacentHTML('beforeend', `
+    <div class="flex justify-end">
+      <div class="bg-blue-600 text-white rounded-xl px-4 py-2 text-sm max-w-[75%] whitespace-pre-wrap">${esc(text)}</div>
+    </div>
+  `);
+  log.lastElementChild.scrollIntoView({behavior: 'smooth', block: 'end'});
+}
+
+function addAssistantBubble(data) {
+  const sources = data.sources.map(s => `
+    <div class="flex justify-between gap-2 py-0.5">
+      <span class="text-gray-500 truncate">${esc(s.source)}</span>
+      <span class="font-mono bg-blue-50 text-blue-700 px-2 rounded shrink-0">score: ${s.score}</span>
+    </div>
+  `).join('');
+
+  log.insertAdjacentHTML('beforeend', `
+    <div class="flex justify-start">
+      <div class="max-w-[75%]">
+        <div class="bg-white border rounded-xl px-4 py-2 text-sm leading-relaxed whitespace-pre-wrap">${esc(data.answer)}</div>
+        <details class="mt-2 bg-gray-100 border rounded-lg px-3 py-2 text-xs" open>
+          <summary class="cursor-pointer text-gray-500">デバッグ情報</summary>
+          <div class="mt-2 space-y-2">
+            <div>
+              <p class="text-gray-400 mb-0.5">圧縮後の検索クエリ</p>
+              <p class="font-mono text-gray-700">${esc(data.condensed_question)}</p>
+            </div>
+            <div>
+              <p class="text-gray-400 mb-0.5">参照チャンク</p>
+              ${sources}
+            </div>
+            <p class="text-gray-400">
+              会話ターン数: ${data.memory_stats.turns} ／ ${data.memory_stats.total_chars} 文字
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  `);
+  log.lastElementChild.scrollIntoView({behavior: 'smooth', block: 'end'});
+}
+
+function addError(text) {
+  log.insertAdjacentHTML('beforeend', `
+    <div class="text-center text-xs text-red-600">${esc(text)}</div>
+  `);
+}
+
+async function send() {
+  const input = document.getElementById('q');
+  const button = document.getElementById('send');
+  const text = input.value.trim();
+  if (!text || button.disabled) return;
+
+  input.value = '';
+  button.disabled = true;
+  addUserBubble(text);
+
+  try {
+    const res = await fetch('/chat/message', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({session_id: await ensureSession(), message: text}),
+    });
+    if (!res.ok) {
+      addError(`エラー (${res.status}): ${(await res.json()).detail}`);
+      return;
+    }
+    addAssistantBubble(await res.json());
+  } catch (e) {
+    addError('通信エラーが発生しました');
+  } finally {
+    button.disabled = false;
+    input.focus();
+  }
+}
+
+async function resetChat() {
+  if (sessionId) {
+    await fetch(`/chat/${sessionId}`, {method: 'DELETE'});
+    sessionId = null;   // 次の送信で新しい session_id を発行する
+  }
+  log.innerHTML = '';
+  document.getElementById('q').focus();
+}
+
+document.getElementById('q').addEventListener('keydown', e => {
+  if (e.key === 'Enter') send();
+});
+</script>
+</body>
+</html>
