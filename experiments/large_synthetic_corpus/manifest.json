@@ -1,0 +1,502 @@
+[
+  {
+    "project": "Aurora",
+    "topic": "01_overview",
+    "path": "docs/01_aurora_01_overview.txt"
+  },
+  {
+    "project": "Aurora",
+    "topic": "02_team",
+    "path": "docs/01_aurora_02_team.txt"
+  },
+  {
+    "project": "Aurora",
+    "topic": "03_architecture",
+    "path": "docs/01_aurora_03_architecture.txt"
+  },
+  {
+    "project": "Aurora",
+    "topic": "04_release",
+    "path": "docs/01_aurora_04_release.txt"
+  },
+  {
+    "project": "Aurora",
+    "topic": "05_incident",
+    "path": "docs/01_aurora_05_incident.txt"
+  },
+  {
+    "project": "Aurora",
+    "topic": "06_governance",
+    "path": "docs/01_aurora_06_governance.txt"
+  },
+  {
+    "project": "Aurora",
+    "topic": "07_operations",
+    "path": "docs/01_aurora_07_operations.txt"
+  },
+  {
+    "project": "Aurora",
+    "topic": "08_acceptance",
+    "path": "docs/01_aurora_08_acceptance.txt"
+  },
+  {
+    "project": "Aurora",
+    "topic": "09_integration",
+    "path": "docs/01_aurora_09_integration.txt"
+  },
+  {
+    "project": "Aurora",
+    "topic": "10_decision_log",
+    "path": "docs/01_aurora_10_decision_log.txt"
+  },
+  {
+    "project": "Borealis",
+    "topic": "01_overview",
+    "path": "docs/02_borealis_01_overview.txt"
+  },
+  {
+    "project": "Borealis",
+    "topic": "02_team",
+    "path": "docs/02_borealis_02_team.txt"
+  },
+  {
+    "project": "Borealis",
+    "topic": "03_architecture",
+    "path": "docs/02_borealis_03_architecture.txt"
+  },
+  {
+    "project": "Borealis",
+    "topic": "04_release",
+    "path": "docs/02_borealis_04_release.txt"
+  },
+  {
+    "project": "Borealis",
+    "topic": "05_incident",
+    "path": "docs/02_borealis_05_incident.txt"
+  },
+  {
+    "project": "Borealis",
+    "topic": "06_governance",
+    "path": "docs/02_borealis_06_governance.txt"
+  },
+  {
+    "project": "Borealis",
+    "topic": "07_operations",
+    "path": "docs/02_borealis_07_operations.txt"
+  },
+  {
+    "project": "Borealis",
+    "topic": "08_acceptance",
+    "path": "docs/02_borealis_08_acceptance.txt"
+  },
+  {
+    "project": "Borealis",
+    "topic": "09_integration",
+    "path": "docs/02_borealis_09_integration.txt"
+  },
+  {
+    "project": "Borealis",
+    "topic": "10_decision_log",
+    "path": "docs/02_borealis_10_decision_log.txt"
+  },
+  {
+    "project": "Cirrus",
+    "topic": "01_overview",
+    "path": "docs/03_cirrus_01_overview.txt"
+  },
+  {
+    "project": "Cirrus",
+    "topic": "02_team",
+    "path": "docs/03_cirrus_02_team.txt"
+  },
+  {
+    "project": "Cirrus",
+    "topic": "03_architecture",
+    "path": "docs/03_cirrus_03_architecture.txt"
+  },
+  {
+    "project": "Cirrus",
+    "topic": "04_release",
+    "path": "docs/03_cirrus_04_release.txt"
+  },
+  {
+    "project": "Cirrus",
+    "topic": "05_incident",
+    "path": "docs/03_cirrus_05_incident.txt"
+  },
+  {
+    "project": "Cirrus",
+    "topic": "06_governance",
+    "path": "docs/03_cirrus_06_governance.txt"
+  },
+  {
+    "project": "Cirrus",
+    "topic": "07_operations",
+    "path": "docs/03_cirrus_07_operations.txt"
+  },
+  {
+    "project": "Cirrus",
+    "topic": "08_acceptance",
+    "path": "docs/03_cirrus_08_acceptance.txt"
+  },
+  {
+    "project": "Cirrus",
+    "topic": "09_integration",
+    "path": "docs/03_cirrus_09_integration.txt"
+  },
+  {
+    "project": "Cirrus",
+    "topic": "10_decision_log",
+    "path": "docs/03_cirrus_10_decision_log.txt"
+  },
+  {
+    "project": "Drift",
+    "topic": "01_overview",
+    "path": "docs/04_drift_01_overview.txt"
+  },
+  {
+    "project": "Drift",
+    "topic": "02_team",
+    "path": "docs/04_drift_02_team.txt"
+  },
+  {
+    "project": "Drift",
+    "topic": "03_architecture",
+    "path": "docs/04_drift_03_architecture.txt"
+  },
+  {
+    "project": "Drift",
+    "topic": "04_release",
+    "path": "docs/04_drift_04_release.txt"
+  },
+  {
+    "project": "Drift",
+    "topic": "05_incident",
+    "path": "docs/04_drift_05_incident.txt"
+  },
+  {
+    "project": "Drift",
+    "topic": "06_governance",
+    "path": "docs/04_drift_06_governance.txt"
+  },
+  {
+    "project": "Drift",
+    "topic": "07_operations",
+    "path": "docs/04_drift_07_operations.txt"
+  },
+  {
+    "project": "Drift",
+    "topic": "08_acceptance",
+    "path": "docs/04_drift_08_acceptance.txt"
+  },
+  {
+    "project": "Drift",
+    "topic": "09_integration",
+    "path": "docs/04_drift_09_integration.txt"
+  },
+  {
+    "project": "Drift",
+    "topic": "10_decision_log",
+    "path": "docs/04_drift_10_decision_log.txt"
+  },
+  {
+    "project": "Ember",
+    "topic": "01_overview",
+    "path": "docs/05_ember_01_overview.txt"
+  },
+  {
+    "project": "Ember",
+    "topic": "02_team",
+    "path": "docs/05_ember_02_team.txt"
+  },
+  {
+    "project": "Ember",
+    "topic": "03_architecture",
+    "path": "docs/05_ember_03_architecture.txt"
+  },
+  {
+    "project": "Ember",
+    "topic": "04_release",
+    "path": "docs/05_ember_04_release.txt"
+  },
+  {
+    "project": "Ember",
+    "topic": "05_incident",
+    "path": "docs/05_ember_05_incident.txt"
+  },
+  {
+    "project": "Ember",
+    "topic": "06_governance",
+    "path": "docs/05_ember_06_governance.txt"
+  },
+  {
+    "project": "Ember",
+    "topic": "07_operations",
+    "path": "docs/05_ember_07_operations.txt"
+  },
+  {
+    "project": "Ember",
+    "topic": "08_acceptance",
+    "path": "docs/05_ember_08_acceptance.txt"
+  },
+  {
+    "project": "Ember",
+    "topic": "09_integration",
+    "path": "docs/05_ember_09_integration.txt"
+  },
+  {
+    "project": "Ember",
+    "topic": "10_decision_log",
+    "path": "docs/05_ember_10_decision_log.txt"
+  },
+  {
+    "project": "Fjord",
+    "topic": "01_overview",
+    "path": "docs/06_fjord_01_overview.txt"
+  },
+  {
+    "project": "Fjord",
+    "topic": "02_team",
+    "path": "docs/06_fjord_02_team.txt"
+  },
+  {
+    "project": "Fjord",
+    "topic": "03_architecture",
+    "path": "docs/06_fjord_03_architecture.txt"
+  },
+  {
+    "project": "Fjord",
+    "topic": "04_release",
+    "path": "docs/06_fjord_04_release.txt"
+  },
+  {
+    "project": "Fjord",
+    "topic": "05_incident",
+    "path": "docs/06_fjord_05_incident.txt"
+  },
+  {
+    "project": "Fjord",
+    "topic": "06_governance",
+    "path": "docs/06_fjord_06_governance.txt"
+  },
+  {
+    "project": "Fjord",
+    "topic": "07_operations",
+    "path": "docs/06_fjord_07_operations.txt"
+  },
+  {
+    "project": "Fjord",
+    "topic": "08_acceptance",
+    "path": "docs/06_fjord_08_acceptance.txt"
+  },
+  {
+    "project": "Fjord",
+    "topic": "09_integration",
+    "path": "docs/06_fjord_09_integration.txt"
+  },
+  {
+    "project": "Fjord",
+    "topic": "10_decision_log",
+    "path": "docs/06_fjord_10_decision_log.txt"
+  },
+  {
+    "project": "Grove",
+    "topic": "01_overview",
+    "path": "docs/07_grove_01_overview.txt"
+  },
+  {
+    "project": "Grove",
+    "topic": "02_team",
+    "path": "docs/07_grove_02_team.txt"
+  },
+  {
+    "project": "Grove",
+    "topic": "03_architecture",
+    "path": "docs/07_grove_03_architecture.txt"
+  },
+  {
+    "project": "Grove",
+    "topic": "04_release",
+    "path": "docs/07_grove_04_release.txt"
+  },
+  {
+    "project": "Grove",
+    "topic": "05_incident",
+    "path": "docs/07_grove_05_incident.txt"
+  },
+  {
+    "project": "Grove",
+    "topic": "06_governance",
+    "path": "docs/07_grove_06_governance.txt"
+  },
+  {
+    "project": "Grove",
+    "topic": "07_operations",
+    "path": "docs/07_grove_07_operations.txt"
+  },
+  {
+    "project": "Grove",
+    "topic": "08_acceptance",
+    "path": "docs/07_grove_08_acceptance.txt"
+  },
+  {
+    "project": "Grove",
+    "topic": "09_integration",
+    "path": "docs/07_grove_09_integration.txt"
+  },
+  {
+    "project": "Grove",
+    "topic": "10_decision_log",
+    "path": "docs/07_grove_10_decision_log.txt"
+  },
+  {
+    "project": "Harbor",
+    "topic": "01_overview",
+    "path": "docs/08_harbor_01_overview.txt"
+  },
+  {
+    "project": "Harbor",
+    "topic": "02_team",
+    "path": "docs/08_harbor_02_team.txt"
+  },
+  {
+    "project": "Harbor",
+    "topic": "03_architecture",
+    "path": "docs/08_harbor_03_architecture.txt"
+  },
+  {
+    "project": "Harbor",
+    "topic": "04_release",
+    "path": "docs/08_harbor_04_release.txt"
+  },
+  {
+    "project": "Harbor",
+    "topic": "05_incident",
+    "path": "docs/08_harbor_05_incident.txt"
+  },
+  {
+    "project": "Harbor",
+    "topic": "06_governance",
+    "path": "docs/08_harbor_06_governance.txt"
+  },
+  {
+    "project": "Harbor",
+    "topic": "07_operations",
+    "path": "docs/08_harbor_07_operations.txt"
+  },
+  {
+    "project": "Harbor",
+    "topic": "08_acceptance",
+    "path": "docs/08_harbor_08_acceptance.txt"
+  },
+  {
+    "project": "Harbor",
+    "topic": "09_integration",
+    "path": "docs/08_harbor_09_integration.txt"
+  },
+  {
+    "project": "Harbor",
+    "topic": "10_decision_log",
+    "path": "docs/08_harbor_10_decision_log.txt"
+  },
+  {
+    "project": "Indigo",
+    "topic": "01_overview",
+    "path": "docs/09_indigo_01_overview.txt"
+  },
+  {
+    "project": "Indigo",
+    "topic": "02_team",
+    "path": "docs/09_indigo_02_team.txt"
+  },
+  {
+    "project": "Indigo",
+    "topic": "03_architecture",
+    "path": "docs/09_indigo_03_architecture.txt"
+  },
+  {
+    "project": "Indigo",
+    "topic": "04_release",
+    "path": "docs/09_indigo_04_release.txt"
+  },
+  {
+    "project": "Indigo",
+    "topic": "05_incident",
+    "path": "docs/09_indigo_05_incident.txt"
+  },
+  {
+    "project": "Indigo",
+    "topic": "06_governance",
+    "path": "docs/09_indigo_06_governance.txt"
+  },
+  {
+    "project": "Indigo",
+    "topic": "07_operations",
+    "path": "docs/09_indigo_07_operations.txt"
+  },
+  {
+    "project": "Indigo",
+    "topic": "08_acceptance",
+    "path": "docs/09_indigo_08_acceptance.txt"
+  },
+  {
+    "project": "Indigo",
+    "topic": "09_integration",
+    "path": "docs/09_indigo_09_integration.txt"
+  },
+  {
+    "project": "Indigo",
+    "topic": "10_decision_log",
+    "path": "docs/09_indigo_10_decision_log.txt"
+  },
+  {
+    "project": "Juniper",
+    "topic": "01_overview",
+    "path": "docs/10_juniper_01_overview.txt"
+  },
+  {
+    "project": "Juniper",
+    "topic": "02_team",
+    "path": "docs/10_juniper_02_team.txt"
+  },
+  {
+    "project": "Juniper",
+    "topic": "03_architecture",
+    "path": "docs/10_juniper_03_architecture.txt"
+  },
+  {
+    "project": "Juniper",
+    "topic": "04_release",
+    "path": "docs/10_juniper_04_release.txt"
+  },
+  {
+    "project": "Juniper",
+    "topic": "05_incident",
+    "path": "docs/10_juniper_05_incident.txt"
+  },
+  {
+    "project": "Juniper",
+    "topic": "06_governance",
+    "path": "docs/10_juniper_06_governance.txt"
+  },
+  {
+    "project": "Juniper",
+    "topic": "07_operations",
+    "path": "docs/10_juniper_07_operations.txt"
+  },
+  {
+    "project": "Juniper",
+    "topic": "08_acceptance",
+    "path": "docs/10_juniper_08_acceptance.txt"
+  },
+  {
+    "project": "Juniper",
+    "topic": "09_integration",
+    "path": "docs/10_juniper_09_integration.txt"
+  },
+  {
+    "project": "Juniper",
+    "topic": "10_decision_log",
+    "path": "docs/10_juniper_10_decision_log.txt"
+  }
+]

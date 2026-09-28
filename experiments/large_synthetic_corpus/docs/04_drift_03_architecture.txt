@@ -1,0 +1,11 @@
+合成ベンチマーク文書 — Drift プログラム アーキテクチャ
+
+この文書は Vector RAG と GraphRAG の評価専用に作成した架空資料です。実在の組織、人物、顧客、認証情報、秘密情報は含みません。各事実は複数文書に意図的に分散しています。
+
+利用者の検索要求は Drift Gateway API を通り Drift Catalog Service に渡されます。Drift Catalog Service は Drift Vector Index に候補検索を依頼し、候補の文書IDを受け取ります。その後、Drift Catalog Service は候補を Drift Policy Service に渡します。
+
+Drift Policy Service は利用者の所属と文書の公開規則を照合し、許可した候補だけを Drift Gateway API に返します。Drift Vector Index は公開可否を判定しません。アクセス規則の変更は Drift Vector Index ではなく Drift Policy Service に反映する必要があります。
+
+Drift Catalog Service の所有チームはプラットフォーム部で、設計責任者は 山田蒼 です。Drift Policy Service の公開前レビュー責任者は 藤田澪 です。Drift Gateway API の稼働状況は 橋本湊 が監視します。
+
+この構成では、候補検索、規則判定、応答送信は別サービスです。質問が「どのサービスが候補を作るか」を尋ねる場合と、「どのサービスが未承認文書を除外するか」を尋ねる場合では、異なる証拠文書が必要になります。

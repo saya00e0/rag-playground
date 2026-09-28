@@ -1,0 +1,11 @@
+合成ベンチマーク文書 — Fjord プログラム アーキテクチャ
+
+この文書は Vector RAG と GraphRAG の評価専用に作成した架空資料です。実在の組織、人物、顧客、認証情報、秘密情報は含みません。各事実は複数文書に意図的に分散しています。
+
+利用者の検索要求は Fjord Gateway API を通り Fjord Catalog Service に渡されます。Fjord Catalog Service は Fjord Vector Index に候補検索を依頼し、候補の文書IDを受け取ります。その後、Fjord Catalog Service は候補を Fjord Policy Service に渡します。
+
+Fjord Policy Service は利用者の所属と文書の公開規則を照合し、許可した候補だけを Fjord Gateway API に返します。Fjord Vector Index は公開可否を判定しません。アクセス規則の変更は Fjord Vector Index ではなく Fjord Policy Service に反映する必要があります。
+
+Fjord Catalog Service の所有チームはプラットフォーム部で、設計責任者は 斉藤陽菜 です。Fjord Policy Service の公開前レビュー責任者は 坂本蓮 です。Fjord Gateway API の稼働状況は 村上葵 が監視します。
+
+この構成では、候補検索、規則判定、応答送信は別サービスです。質問が「どのサービスが候補を作るか」を尋ねる場合と、「どのサービスが未承認文書を除外するか」を尋ねる場合では、異なる証拠文書が必要になります。
