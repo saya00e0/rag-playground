@@ -1,0 +1,9 @@
+ベンチマーク用合成文書 — Orion 2.1 アーキテクチャ
+
+この文書は評価専用の架空情報である。
+
+利用者の検索要求は Gateway API を通り、Catalog Service に渡される。Catalog Service は Vector Index に候補検索を依頼し、候補の文書IDを受け取る。Catalog Service は候補を Policy Service に渡し、Policy Service が利用者の部署と文書の公開規則を照合する。
+
+Policy Service が許可した候補だけが Gateway API から返却される。Vector Index は公開可否を判定しない。したがって、アクセス規則の変更は Vector Index ではなく Policy Service に反映する必要がある。
+
+Catalog Service の所有チームはプラットフォーム部で、サービスの設計責任者は田中健である。Policy Service の公開前レビュー責任者は鈴木梨奈である。
