@@ -14,6 +14,17 @@ class ExtractorTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "only entities and relations"):
             parse_extraction('{"entities": [], "relations": [], "note": "bad"}')
 
+    def test_parse_extraction_rejects_out_of_vocabulary_relation(self):
+        payload = '{"entities":[{"name":"田中健","type":"person"},{"name":"Catalog Service","type":"service"}],"relations":[{"source":"田中健","target":"Catalog Service","type":"owns"}]}'
+        with self.assertRaisesRegex(ValueError, "outside the configured vocabulary"):
+            parse_extraction(payload)
+
+    def test_parse_extraction_excludes_undeclared_relation_endpoint(self):
+        payload = '{"entities":[{"name":"田中健","type":"person"}],"relations":[{"source":"田中健","target":"Catalog Service","type":"responsible_for"}]}'
+        extraction = parse_extraction(payload)
+        self.assertEqual(extraction.relations, ())
+        self.assertEqual(len(extraction.rejected_relations), 1)
+
 
 class GraphTests(unittest.TestCase):
     def setUp(self):

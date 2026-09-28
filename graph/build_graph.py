@@ -25,6 +25,10 @@ def extraction_to_dict(extraction: Extraction) -> dict:
             {"source": relation.source, "target": relation.target, "type": relation.type}
             for relation in extraction.relations
         ],
+        "rejected_relations": [
+            {"source": relation.source, "target": relation.target, "type": relation.type}
+            for relation in extraction.rejected_relations
+        ],
     }
 
 
@@ -32,12 +36,13 @@ def extraction_from_dict(raw: dict) -> Extraction:
     return Extraction(
         entities=tuple(Entity(**entity) for entity in raw["entities"]),
         relations=tuple(Relation(**relation) for relation in raw["relations"]),
+        rejected_relations=tuple(Relation(**relation) for relation in raw.get("rejected_relations", [])),
     )
 
 
 def load_or_extract(chunk: ChunkRef, text: str, cache_dir: Path, model: str) -> Extraction:
     digest = chunk_digest(text)
-    cache_path = cache_dir / f"{digest}.json"
+    cache_path = cache_dir / EXTRACTION_PROMPT_VERSION / f"{digest}.json"
     if cache_path.exists():
         cached = json.loads(cache_path.read_text(encoding="utf-8"))
         if (
@@ -48,7 +53,7 @@ def load_or_extract(chunk: ChunkRef, text: str, cache_dir: Path, model: str) -> 
             return extraction_from_dict(cached["extraction"])
 
     extraction = extract_chunk(text, model=model)
-    cache_dir.mkdir(parents=True, exist_ok=True)
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(
         json.dumps(
             {
@@ -91,15 +96,19 @@ def main() -> None:
 
     builder = GraphBuilder()
     cache_dir = Path(args.cache_dir)
+    rejected_relation_count = 0
     for text, metadata in chunks:
         chunk = ChunkRef(source=metadata["source"], chunk_idx=metadata["chunk_idx"])
-        builder.add_extraction(chunk, load_or_extract(chunk, text, cache_dir, args.model))
+        extraction = load_or_extract(chunk, text, cache_dir, args.model)
+        rejected_relation_count += len(extraction.rejected_relations)
+        builder.add_extraction(chunk, extraction)
 
     graph = builder.build()
     metadata = {
         "model": args.model,
         "prompt_version": EXTRACTION_PROMPT_VERSION,
         "chunk_count": len(chunks),
+        "rejected_relation_count": rejected_relation_count,
         "statistics": graph_statistics(graph),
     }
     save_graph(args.graph_path, graph, metadata)
