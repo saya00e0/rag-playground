@@ -3,7 +3,10 @@ import unittest
 from pathlib import Path
 
 from eval.dataset import load_dataset
+from eval.dataset import EvaluationQuestion
+from eval.evaluate_graph import run_graph_evaluation
 from eval.evaluate_retrieval import score_question, summarize
+from graph.retriever import GraphRetrievedChunk
 
 
 class DatasetTests(unittest.TestCase):
@@ -44,6 +47,20 @@ class MetricTests(unittest.TestCase):
         self.assertEqual(result["aggregate"]["question_count"], 2)
         self.assertEqual(result["aggregate"]["Recall@1"], 0.5)
         self.assertEqual(result["by_type"]["multi_hop"]["mean_latency_ms"], 30.0)
+
+    def test_graph_evaluation_uses_the_same_document_metric(self):
+        class FakeRetriever:
+            def retrieve(self, question, depth, max_entities, max_chunks):
+                return [GraphRetrievedChunk("docs/a.txt", 0, 1.0)]
+
+        rows = run_graph_evaluation(
+            [EvaluationQuestion("q1", "Q?", "factual", ("docs/a.txt",), "source")],
+            FakeRetriever(),
+            depth=2,
+            max_entities=5,
+            top_k=5,
+        )
+        self.assertEqual(rows[0]["recall_at_1"], 1.0)
 
 
 if __name__ == "__main__":
