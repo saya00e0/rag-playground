@@ -1,0 +1,15 @@
+{
+  "provider": "OpenAI",
+  "model": "gpt-4o-mini",
+  "temperature": 0,
+  "max_input_chunks": 32,
+  "max_output_tokens_per_chunk": 1200,
+  "retry_limit": 0,
+  "approved_monthly_cost_limit_usd": 10,
+  "dataset_path": "experiments/hard_multihop_corpus/eval/dataset.jsonl",
+  "corpus_sha256": "aa0c0dabaffe9044aa8602363fe607fe0f6db3c8a8b0d7de8999c76575797378",
+  "retrieval_top_k": 5,
+  "traversal_depth": 2,
+  "max_seed_entities": 5,
+  "extraction_prompt_version": "2026-09-28-v2"
+}

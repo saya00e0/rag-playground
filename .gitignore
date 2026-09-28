@@ -14,6 +14,7 @@ experiments/large_synthetic_corpus/results/graph_auto_v2.json
 experiments/large_synthetic_corpus/extraction_cache/
 experiments/hard_multihop_corpus/chroma_db/
 experiments/hard_multihop_corpus/results/*_raw.json
+experiments/hard_multihop_corpus/results/graph_auto_v2.json
 experiments/hard_multihop_corpus/extraction_cache/
 
 # レビューメモ（手元のみ）

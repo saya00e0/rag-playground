@@ -1,0 +1,68 @@
+{
+  "system": "graph",
+  "variant": "auto_v2",
+  "graph_path": "experiments/hard_multihop_corpus/results/graph_auto_v2.json",
+  "graph_metadata": {
+    "model": "gpt-4o-mini",
+    "prompt_version": "2026-09-28-v2",
+    "chunk_count": 32,
+    "rejected_relation_count": 7,
+    "statistics": {
+      "node_count": 32,
+      "edge_count": 57,
+      "relation_types": [
+        "affects",
+        "depends_on",
+        "filters",
+        "notifies",
+        "requires",
+        "responsible_for",
+        "routes_to",
+        "uses"
+      ],
+      "connected_components": 1,
+      "average_degree": 3.5625,
+      "isolated_node_count": 0
+    }
+  },
+  "dataset_path": "experiments/hard_multihop_corpus/eval/dataset.jsonl",
+  "dataset_question_count": 24,
+  "relevance_unit": "document_id",
+  "top_k": 5,
+  "depth": 2,
+  "max_entities": 5,
+  "aggregate": {
+    "Recall@1": 0.2847222222222222,
+    "Recall@3": 0.2986111111111111,
+    "Recall@5": 0.3194444444444445,
+    "MRR": 0.425,
+    "mean_latency_ms": 0.16978645833333705,
+    "question_count": 24
+  },
+  "by_type": {
+    "factual": {
+      "Recall@1": 1.0,
+      "Recall@3": 1.0,
+      "Recall@5": 1.0,
+      "MRR": 1.0,
+      "mean_latency_ms": 0.07626025000000147,
+      "question_count": 4
+    },
+    "multi_hop": {
+      "Recall@1": 0.15277777777777776,
+      "Recall@3": 0.18055555555555555,
+      "Recall@5": 0.2222222222222222,
+      "MRR": 0.43333333333333335,
+      "mean_latency_ms": 0.22730200000000791,
+      "question_count": 12
+    },
+    "relationship": {
+      "Recall@1": 0.125,
+      "Recall@3": 0.125,
+      "Recall@5": 0.125,
+      "MRR": 0.125,
+      "mean_latency_ms": 0.13027624999999848,
+      "question_count": 8
+    }
+  }
+}
