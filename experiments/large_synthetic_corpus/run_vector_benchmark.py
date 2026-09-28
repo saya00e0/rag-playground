@@ -59,11 +59,11 @@ def build_index(
     if reset:
         try:
             chroma.delete_collection(collection_name)
-        except ValueError:
+        except chromadb.errors.NotFoundError:
             pass
     try:
         chroma.get_collection(collection_name)
-    except ValueError:
+    except chromadb.errors.NotFoundError:
         pass
     else:
         raise ValueError(f"collection already exists: {collection_name}; rerun with --reset to replace it")
