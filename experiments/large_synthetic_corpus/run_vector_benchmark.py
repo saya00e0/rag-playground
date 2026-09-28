@@ -14,7 +14,6 @@ from pathlib import Path
 
 import chromadb
 from openai import OpenAI
-from dotenv import load_dotenv
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 if str(REPOSITORY_ROOT) not in sys.path:
@@ -126,7 +125,6 @@ def main() -> None:
     if args.top_k < 5:
         parser.error("--top-k must be at least 5 to calculate Recall@5")
 
-    load_dotenv()
     documents = source_documents(Path(args.documents_dir))
     collection = build_index(documents, args.chroma_path, args.collection, args.model, args.reset)
     dataset = load_dataset(args.dataset)

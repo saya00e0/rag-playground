@@ -1,0 +1,44 @@
+{
+  "system": "vector",
+  "dataset_path": "experiments/large_synthetic_corpus/eval/dataset.jsonl",
+  "dataset_question_count": 60,
+  "relevance_unit": "document_id",
+  "top_k": 5,
+  "embedding_model": "text-embedding-3-small",
+  "chunk_count": 196,
+  "corpus_sha256": "07639f7112eaf045788d355349c2f6fe3ca266291ed9996cfa22aff29dfa40c2",
+  "aggregate": {
+    "Recall@1": 0.4472222222222222,
+    "Recall@3": 0.7583333333333333,
+    "Recall@5": 0.9055555555555556,
+    "MRR": 0.8477777777777777,
+    "mean_latency_ms": 137.90654936666667,
+    "question_count": 60
+  },
+  "by_type": {
+    "factual": {
+      "Recall@1": 0.65,
+      "Recall@3": 0.8,
+      "Recall@5": 0.85,
+      "MRR": 0.7183333333333334,
+      "mean_latency_ms": 148.7332064,
+      "question_count": 20
+    },
+    "multi_hop": {
+      "Recall@1": 0.26666666666666666,
+      "Recall@3": 0.6,
+      "Recall@5": 0.8666666666666666,
+      "MRR": 0.9,
+      "mean_latency_ms": 129.29989595,
+      "question_count": 20
+    },
+    "relationship": {
+      "Recall@1": 0.425,
+      "Recall@3": 0.875,
+      "Recall@5": 1.0,
+      "MRR": 0.925,
+      "mean_latency_ms": 135.68654575,
+      "question_count": 20
+    }
+  }
+}
