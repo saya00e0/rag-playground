@@ -1,0 +1,1728 @@
+{
+  "graph_variant": "auto_v2",
+  "graph_path": "experiments/hard_multihop_corpus/results/graph_auto_v2.json",
+  "depth": 2,
+  "max_entities": 5,
+  "top_k": 5,
+  "records": [
+    {
+      "id": "hq01a",
+      "type": "multi_hop",
+      "question": "Northstar の警報が出たとき、調査を開始する運用責任組織はどこですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/atlas_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/atlas_03_service_ownership.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_01_signal_registry.txt",
+          "score": 0.5905286073684692
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_02_signal_routing.txt",
+          "score": 0.5858322381973267
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_05_error_catalog.txt",
+          "score": 0.5504022240638733
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_06_change_note.txt",
+          "score": 0.487384557723999
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_08_release_note.txt",
+          "score": 0.45943403244018555
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 7.5,
+          "traversal_path": [
+            "Northstar"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Northstar",
+        "警報",
+        "調査"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/atlas_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/atlas_03_service_ownership.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "The generic seeds 調査 and 警報 connect to repeated similar-terms documents across all programs and outrank the Northstar path.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq01b",
+      "type": "multi_hop",
+      "question": "Northstar の警報を理由に公開例外を申請するときの最終承認者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/atlas_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/atlas_04_exception_register.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_01_signal_registry.txt",
+          "score": 0.5419209003448486
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_04_exception_register.txt",
+          "score": 0.5068808794021606
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_02_signal_routing.txt",
+          "score": 0.504364013671875
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_05_error_catalog.txt",
+          "score": 0.4991565942764282
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "score": 0.4847327470779419
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "chunk_idx": 0,
+          "score": 9.833333333333334,
+          "traversal_path": [
+            "公開例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Northstar",
+        "公開例外",
+        "警報",
+        "例外"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/atlas_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/atlas_04_exception_register.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "公開例外 and 例外 match generic cross-program nodes, so the Atlas-specific route and approval documents are displaced.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq01c",
+      "type": "multi_hop",
+      "question": "障害コード E-41 を見つけた場合、復旧確認まで担当する組織はどこですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/atlas_05_error_catalog.txt",
+        "experiments/hard_multihop_corpus/docs/atlas_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/atlas_03_service_ownership.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_05_error_catalog.txt",
+          "score": 0.5095561146736145
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_05_error_catalog.txt",
+          "score": 0.4974287748336792
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_05_error_catalog.txt",
+          "score": 0.47358256578445435
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_05_error_catalog.txt",
+          "score": 0.4590466618537903
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "score": 0.403262734413147
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 7.333333333333334,
+          "traversal_path": [
+            "E-41"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 3.833333333333333,
+          "traversal_path": [
+            "E-41",
+            "一次対応者"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 3.833333333333333,
+          "traversal_path": [
+            "E-41",
+            "一次対応者"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_08_release_note.txt",
+          "chunk_idx": 0,
+          "score": 2.8333333333333335,
+          "traversal_path": [
+            "E-41",
+            "Northstar"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_01_signal_registry.txt",
+          "chunk_idx": 0,
+          "score": 1.8333333333333333,
+          "traversal_path": [
+            "E-41",
+            "Northstar"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "E-41"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/atlas_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/atlas_03_service_ownership.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "E-41 reaches Northstar and Atlas Relay, but the shared 一次対応者 node brings other error-catalog chunks above the required routing and ownership documents.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq01d",
+      "type": "relationship",
+      "question": "Atlas Relay の運用責任組織はどこですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/atlas_03_service_ownership.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_03_service_ownership.txt",
+          "score": 0.588575005531311
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_06_change_note.txt",
+          "score": 0.5198743939399719
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_04_exception_register.txt",
+          "score": 0.5121454000473022
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_02_signal_routing.txt",
+          "score": 0.4725978374481201
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_03_service_ownership.txt",
+          "score": 0.46650439500808716
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 8.5,
+          "traversal_path": [
+            "Atlas"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_08_release_note.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "Atlas"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_02_signal_routing.txt",
+          "chunk_idx": 0,
+          "score": 6.0,
+          "traversal_path": [
+            "Atlas Relay"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 4.833333333333334,
+          "traversal_path": [
+            "Atlas"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 4.833333333333333,
+          "traversal_path": [
+            "Atlas",
+            "例外"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Atlas Relay",
+        "Atlas"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/atlas_03_service_ownership.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "The exact service seed is accompanied by the broad Atlas seed, whose repeated provenance outranks the ownership document.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq01e",
+      "type": "relationship",
+      "question": "Atlas Relay の公開例外の最終承認者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/atlas_04_exception_register.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_04_exception_register.txt",
+          "score": 0.5746626257896423
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_03_service_ownership.txt",
+          "score": 0.5445667505264282
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_06_change_note.txt",
+          "score": 0.5344464182853699
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_08_release_note.txt",
+          "score": 0.47668522596359253
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "score": 0.4713912010192871
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "chunk_idx": 0,
+          "score": 9.833333333333334,
+          "traversal_path": [
+            "公開例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 9.0,
+          "traversal_path": [
+            "Atlas"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_08_release_note.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "Atlas"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "例外"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Atlas Relay",
+        "Atlas",
+        "公開例外",
+        "例外"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/atlas_04_exception_register.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "The broad Atlas, 公開例外, and 例外 seeds displace the Atlas-specific approval document.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq02a",
+      "type": "multi_hop",
+      "question": "Lighthouse の警報が出たとき、調査を開始する運用責任組織はどこですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/beacon_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/beacon_03_service_ownership.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_02_signal_routing.txt",
+          "score": 0.5977144241333008
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_01_signal_registry.txt",
+          "score": 0.576628565788269
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_05_error_catalog.txt",
+          "score": 0.5618536472320557
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_06_change_note.txt",
+          "score": 0.5281442403793335
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "score": 0.48226964473724365
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 7.5,
+          "traversal_path": [
+            "Lighthouse"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Lighthouse",
+        "警報",
+        "調査"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/beacon_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/beacon_03_service_ownership.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "The generic seeds 調査 and 警報 connect to repeated similar-terms documents across all programs and outrank the Lighthouse path.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq02b",
+      "type": "multi_hop",
+      "question": "Lighthouse の警報を理由に公開例外を申請するときの最終承認者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/beacon_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "score": 0.5324118137359619
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_01_signal_registry.txt",
+          "score": 0.5299956798553467
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_02_signal_routing.txt",
+          "score": 0.5227496027946472
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_06_change_note.txt",
+          "score": 0.5147395133972168
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_05_error_catalog.txt",
+          "score": 0.507718563079834
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "chunk_idx": 0,
+          "score": 9.833333333333334,
+          "traversal_path": [
+            "公開例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Lighthouse",
+        "公開例外",
+        "警報",
+        "例外"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/beacon_02_signal_routing.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "公開例外 and 例外 match generic cross-program nodes, so the Beacon-specific routing document is displaced.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq02c",
+      "type": "multi_hop",
+      "question": "障害コード E-52 を見つけた場合、復旧確認まで担当する組織はどこですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/beacon_05_error_catalog.txt",
+        "experiments/hard_multihop_corpus/docs/beacon_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/beacon_03_service_ownership.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_05_error_catalog.txt",
+          "score": 0.5150027275085449
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_05_error_catalog.txt",
+          "score": 0.5076794624328613
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_05_error_catalog.txt",
+          "score": 0.4903254508972168
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_05_error_catalog.txt",
+          "score": 0.4768984913825989
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "score": 0.39793336391448975
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 7.333333333333334,
+          "traversal_path": [
+            "E-52"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 3.833333333333333,
+          "traversal_path": [
+            "E-52",
+            "一次対応者"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 3.833333333333333,
+          "traversal_path": [
+            "E-52",
+            "一次対応者"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_08_release_note.txt",
+          "chunk_idx": 0,
+          "score": 2.8333333333333335,
+          "traversal_path": [
+            "E-52",
+            "Lighthouse"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_01_signal_registry.txt",
+          "chunk_idx": 0,
+          "score": 1.8333333333333333,
+          "traversal_path": [
+            "E-52",
+            "Lighthouse"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "E-52"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/beacon_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/beacon_03_service_ownership.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "E-52 reaches Lighthouse and Beacon Bridge, but the shared 一次対応者 node brings other error-catalog chunks above the required routing and ownership documents.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq02d",
+      "type": "relationship",
+      "question": "Beacon Bridge の運用責任組織はどこですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/beacon_03_service_ownership.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_03_service_ownership.txt",
+          "score": 0.687195897102356
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_06_change_note.txt",
+          "score": 0.6627334952354431
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_02_signal_routing.txt",
+          "score": 0.6207073926925659
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "score": 0.6037400364875793
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_08_release_note.txt",
+          "score": 0.5920332074165344
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 8.5,
+          "traversal_path": [
+            "Beacon"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_08_release_note.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "Beacon"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "chunk_idx": 0,
+          "score": 6.166666666666666,
+          "traversal_path": [
+            "Beacon Bridge"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 4.833333333333334,
+          "traversal_path": [
+            "Beacon"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 4.833333333333333,
+          "traversal_path": [
+            "Beacon",
+            "例外"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Beacon Bridge",
+        "Beacon"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/beacon_03_service_ownership.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "The exact service seed is accompanied by the broad Beacon seed, whose repeated provenance outranks the ownership document.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq02e",
+      "type": "relationship",
+      "question": "Beacon Bridge の公開例外の最終承認者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_06_change_note.txt",
+          "score": 0.6482651233673096
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "score": 0.6417876482009888
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_03_service_ownership.txt",
+          "score": 0.6407452821731567
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_08_release_note.txt",
+          "score": 0.6023118495941162
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_02_signal_routing.txt",
+          "score": 0.5675351619720459
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "chunk_idx": 0,
+          "score": 10.333333333333334,
+          "traversal_path": [
+            "Beacon Bridge"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 9.0,
+          "traversal_path": [
+            "Beacon"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_08_release_note.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "Beacon"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "例外"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Beacon Bridge",
+        "Beacon",
+        "公開例外",
+        "例外"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "hq03a",
+      "type": "multi_hop",
+      "question": "Tailwind の警報が出たとき、調査を開始する運用責任組織はどこですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/comet_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/comet_03_service_ownership.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_01_signal_registry.txt",
+          "score": 0.550420343875885
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_02_signal_routing.txt",
+          "score": 0.5288991928100586
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_05_error_catalog.txt",
+          "score": 0.4932452440261841
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_06_change_note.txt",
+          "score": 0.4224395155906677
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_02_signal_routing.txt",
+          "score": 0.4213642477989197
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_02_signal_routing.txt",
+          "chunk_idx": 0,
+          "score": 5.0,
+          "traversal_path": [
+            "Tailwind"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Tailwind",
+        "警報",
+        "調査"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/comet_03_service_ownership.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "The generic seeds 調査 and 警報 connect to repeated similar-terms documents across all programs and outrank the Tailwind path.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq03b",
+      "type": "multi_hop",
+      "question": "Tailwind の警報を理由に公開例外を申請するときの最終承認者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/comet_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/comet_04_exception_register.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_01_signal_registry.txt",
+          "score": 0.5358103513717651
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_02_signal_routing.txt",
+          "score": 0.48100918531417847
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_05_error_catalog.txt",
+          "score": 0.4703482389450073
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_06_change_note.txt",
+          "score": 0.43168818950653076
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_04_exception_register.txt",
+          "score": 0.4246525168418884
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "chunk_idx": 0,
+          "score": 9.833333333333334,
+          "traversal_path": [
+            "公開例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Tailwind",
+        "公開例外",
+        "警報",
+        "例外"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/comet_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/comet_04_exception_register.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "公開例外 and 例外 match generic cross-program nodes, so the Comet-specific route and approval documents are displaced.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq03c",
+      "type": "multi_hop",
+      "question": "障害コード E-63 を見つけた場合、復旧確認まで担当する組織はどこですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/comet_05_error_catalog.txt",
+        "experiments/hard_multihop_corpus/docs/comet_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/comet_03_service_ownership.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_05_error_catalog.txt",
+          "score": 0.49918675422668457
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_05_error_catalog.txt",
+          "score": 0.49141019582748413
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_05_error_catalog.txt",
+          "score": 0.4645001292228699
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_05_error_catalog.txt",
+          "score": 0.4635964035987854
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "score": 0.39690327644348145
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 6.0,
+          "traversal_path": [
+            "E-63"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 4.5,
+          "traversal_path": [
+            "E-63",
+            "Comet"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_02_signal_routing.txt",
+          "chunk_idx": 0,
+          "score": 3.333333333333333,
+          "traversal_path": [
+            "E-63",
+            "Comet"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_08_release_note.txt",
+          "chunk_idx": 0,
+          "score": 3.333333333333333,
+          "traversal_path": [
+            "E-63",
+            "Comet"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_01_signal_registry.txt",
+          "chunk_idx": 0,
+          "score": 2.0,
+          "traversal_path": [
+            "E-63",
+            "Comet"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "E-63"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/comet_03_service_ownership.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "E-63 reaches Tailwind and Comet Router, but the shared 一次対応者 node brings other error-catalog chunks above the ownership document.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq03d",
+      "type": "relationship",
+      "question": "Comet Router の運用責任組織はどこですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/comet_03_service_ownership.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_03_service_ownership.txt",
+          "score": 0.6963644027709961
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_06_change_note.txt",
+          "score": 0.6385865807533264
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_04_exception_register.txt",
+          "score": 0.6284503936767578
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_02_signal_routing.txt",
+          "score": 0.6042104959487915
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_08_release_note.txt",
+          "score": 0.582531213760376
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 8.5,
+          "traversal_path": [
+            "Comet"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_02_signal_routing.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "Comet"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_08_release_note.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "Comet"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 5.0,
+          "traversal_path": [
+            "Comet"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 4.833333333333333,
+          "traversal_path": [
+            "Comet",
+            "例外"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Comet Router",
+        "Comet"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/comet_03_service_ownership.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "The exact service seed is accompanied by the broad Comet seed, whose repeated provenance outranks the ownership document.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq03e",
+      "type": "relationship",
+      "question": "Comet Router の公開例外の最終承認者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/comet_04_exception_register.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_04_exception_register.txt",
+          "score": 0.7000201940536499
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_06_change_note.txt",
+          "score": 0.6725040674209595
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_03_service_ownership.txt",
+          "score": 0.6695077419281006
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_08_release_note.txt",
+          "score": 0.6211962103843689
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_02_signal_routing.txt",
+          "score": 0.5971944332122803
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "chunk_idx": 0,
+          "score": 9.833333333333334,
+          "traversal_path": [
+            "公開例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 9.0,
+          "traversal_path": [
+            "Comet"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_02_signal_routing.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "Comet"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Comet Router",
+        "Comet",
+        "公開例外",
+        "例外"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/comet_04_exception_register.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "The broad Comet, 公開例外, and 例外 seeds displace the Comet-specific approval document.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq04a",
+      "type": "multi_hop",
+      "question": "Tidepool の警報が出たとき、調査を開始する運用責任組織はどこですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/delta_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/delta_03_service_ownership.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_02_signal_routing.txt",
+          "score": 0.5757421851158142
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_01_signal_registry.txt",
+          "score": 0.5676069259643555
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_05_error_catalog.txt",
+          "score": 0.5477674007415771
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_06_change_note.txt",
+          "score": 0.4713684916496277
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_02_signal_routing.txt",
+          "score": 0.43571901321411133
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "調査"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 7.5,
+          "traversal_path": [
+            "Tidepool"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Tidepool",
+        "警報",
+        "調査"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/delta_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/delta_03_service_ownership.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "The generic seeds 調査 and 警報 connect to repeated similar-terms documents across all programs and outrank the Tidepool path.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq04b",
+      "type": "multi_hop",
+      "question": "Tidepool の警報を理由に公開例外を申請するときの最終承認者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/delta_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/delta_04_exception_register.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_01_signal_registry.txt",
+          "score": 0.5126460790634155
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_02_signal_routing.txt",
+          "score": 0.5057541131973267
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_05_error_catalog.txt",
+          "score": 0.49316972494125366
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "score": 0.47093623876571655
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_06_change_note.txt",
+          "score": 0.46141648292541504
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "chunk_idx": 0,
+          "score": 9.833333333333334,
+          "traversal_path": [
+            "公開例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 7.833333333333334,
+          "traversal_path": [
+            "例外"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Tidepool",
+        "公開例外",
+        "警報",
+        "例外"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/delta_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/delta_04_exception_register.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "公開例外 and 例外 match generic cross-program nodes, so the Delta-specific route and approval documents are displaced.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq04c",
+      "type": "multi_hop",
+      "question": "障害コード E-74 を見つけた場合、復旧確認まで担当する組織はどこですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/delta_05_error_catalog.txt",
+        "experiments/hard_multihop_corpus/docs/delta_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/delta_03_service_ownership.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_05_error_catalog.txt",
+          "score": 0.553442120552063
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_05_error_catalog.txt",
+          "score": 0.48221659660339355
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_05_error_catalog.txt",
+          "score": 0.474496066570282
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_05_error_catalog.txt",
+          "score": 0.467055082321167
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "score": 0.4100494384765625
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 7.333333333333334,
+          "traversal_path": [
+            "E-74"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 3.833333333333333,
+          "traversal_path": [
+            "E-74",
+            "一次対応者"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 3.833333333333333,
+          "traversal_path": [
+            "E-74",
+            "一次対応者"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_08_release_note.txt",
+          "chunk_idx": 0,
+          "score": 2.8333333333333335,
+          "traversal_path": [
+            "E-74",
+            "Tidepool"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_01_signal_registry.txt",
+          "chunk_idx": 0,
+          "score": 1.8333333333333333,
+          "traversal_path": [
+            "E-74",
+            "Tidepool"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "E-74"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/delta_02_signal_routing.txt",
+        "experiments/hard_multihop_corpus/docs/delta_03_service_ownership.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "E-74 reaches Tidepool and Delta Gateway, but the shared 一次対応者 node brings other error-catalog chunks above the required routing and ownership documents.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq04d",
+      "type": "relationship",
+      "question": "Delta Gateway の運用責任組織はどこですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/delta_03_service_ownership.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_03_service_ownership.txt",
+          "score": 0.6026968359947205
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_06_change_note.txt",
+          "score": 0.5511988401412964
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_02_signal_routing.txt",
+          "score": 0.5163150429725647
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_04_exception_register.txt",
+          "score": 0.5094761848449707
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_08_release_note.txt",
+          "score": 0.48355042934417725
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 8.5,
+          "traversal_path": [
+            "Delta"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_04_exception_register.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "Delta"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_08_release_note.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "Delta"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_05_error_catalog.txt",
+          "chunk_idx": 0,
+          "score": 4.833333333333334,
+          "traversal_path": [
+            "Delta"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 4.833333333333333,
+          "traversal_path": [
+            "Delta",
+            "例外"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Delta Gateway",
+        "Delta"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/delta_03_service_ownership.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "The exact service seed is accompanied by the broad Delta seed, whose repeated provenance outranks the ownership document.",
+      "benchmark_note": null
+    },
+    {
+      "id": "hq04e",
+      "type": "relationship",
+      "question": "Delta Gateway の公開例外の最終承認者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/hard_multihop_corpus/docs/delta_04_exception_register.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_04_exception_register.txt",
+          "score": 0.5747609734535217
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_06_change_note.txt",
+          "score": 0.5550473928451538
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_03_service_ownership.txt",
+          "score": 0.5400693416595459
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_08_release_note.txt",
+          "score": 0.49642693996429443
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_02_signal_routing.txt",
+          "score": 0.483883261680603
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_04_exception_register.txt",
+          "chunk_idx": 0,
+          "score": 9.833333333333334,
+          "traversal_path": [
+            "公開例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/delta_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 9.0,
+          "traversal_path": [
+            "Delta"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/atlas_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/beacon_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "例外"
+          ]
+        },
+        {
+          "document": "experiments/hard_multihop_corpus/docs/comet_07_similar_terms.txt",
+          "chunk_idx": 0,
+          "score": 6.5,
+          "traversal_path": [
+            "例外"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Delta Gateway",
+        "Delta",
+        "公開例外",
+        "例外"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/hard_multihop_corpus/docs/delta_04_exception_register.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "The broad Delta, 公開例外, and 例外 seeds displace the Delta-specific approval document.",
+      "benchmark_note": null
+    }
+  ]
+}
