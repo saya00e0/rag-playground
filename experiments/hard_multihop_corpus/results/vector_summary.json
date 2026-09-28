@@ -1,0 +1,44 @@
+{
+  "system": "vector",
+  "dataset_path": "experiments/hard_multihop_corpus/eval/dataset.jsonl",
+  "dataset_question_count": 24,
+  "relevance_unit": "document_id",
+  "top_k": 5,
+  "embedding_model": "text-embedding-3-small",
+  "chunk_count": 32,
+  "corpus_sha256": "aa0c0dabaffe9044aa8602363fe607fe0f6db3c8a8b0d7de8999c76575797378",
+  "aggregate": {
+    "Recall@1": 0.5625,
+    "Recall@3": 0.7430555555555555,
+    "Recall@5": 0.7430555555555555,
+    "MRR": 0.8472222222222222,
+    "mean_latency_ms": 179.08351400000035,
+    "question_count": 24
+  },
+  "by_type": {
+    "factual": {
+      "Recall@1": 1.0,
+      "Recall@3": 1.0,
+      "Recall@5": 1.0,
+      "MRR": 1.0,
+      "mean_latency_ms": 115.09976025000057,
+      "question_count": 4
+    },
+    "multi_hop": {
+      "Recall@1": 0.20833333333333334,
+      "Recall@3": 0.4861111111111111,
+      "Recall@5": 0.4861111111111111,
+      "MRR": 0.7361111111111112,
+      "mean_latency_ms": 237.28608350000027,
+      "question_count": 12
+    },
+    "relationship": {
+      "Recall@1": 0.875,
+      "Recall@3": 1.0,
+      "Recall@5": 1.0,
+      "MRR": 0.9375,
+      "mean_latency_ms": 123.7715366250003,
+      "question_count": 8
+    }
+  }
+}
