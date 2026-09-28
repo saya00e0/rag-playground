@@ -10,6 +10,7 @@ __pycache__/
 chroma_db/
 experiments/large_synthetic_corpus/chroma_db/
 experiments/large_synthetic_corpus/results/*_raw.json
+experiments/large_synthetic_corpus/results/graph_auto_v2.json
 experiments/large_synthetic_corpus/extraction_cache/
 
 # レビューメモ（手元のみ）
