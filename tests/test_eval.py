@@ -6,6 +6,7 @@ from eval.dataset import load_dataset
 from eval.dataset import EvaluationQuestion
 from eval.evaluate_graph import run_graph_evaluation
 from eval.evaluate_retrieval import score_question, summarize
+from eval.analyze_graph_failures import shortest_paths
 from graph.retriever import GraphRetrievedChunk
 
 
@@ -61,6 +62,13 @@ class MetricTests(unittest.TestCase):
             top_k=5,
         )
         self.assertEqual(rows[0]["recall_at_1"], 1.0)
+
+    def test_analysis_shortest_paths_respects_depth(self):
+        graph = {
+            "nodes": [{"id": "a", "name": "A", "chunk_refs": []}, {"id": "b", "name": "B", "chunk_refs": []}, {"id": "c", "name": "C", "chunk_refs": []}],
+            "edges": [{"source": "a", "target": "b"}, {"source": "b", "target": "c"}],
+        }
+        self.assertEqual(shortest_paths(graph, ["a"], 1), {"a": ["a"], "b": ["a", "b"]})
 
 
 if __name__ == "__main__":

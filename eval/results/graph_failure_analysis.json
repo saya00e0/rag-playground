@@ -1,0 +1,1184 @@
+{
+  "graph_variant": "auto_v2",
+  "graph_path": "eval/results/graph_v2.json",
+  "depth": 2,
+  "max_entities": 5,
+  "top_k": 5,
+  "records": [
+    {
+      "id": "q009",
+      "type": "relationship",
+      "question": "アクセス規則に問題が見つかった場合、最終的に公開可否を判断するのは誰ですか？",
+      "required_relevant_documents": [
+        "docs/benchmark_06_governance.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "score": 0.48386281728744507
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "score": 0.43272536993026733
+        },
+        {
+          "document": "docs/benchmark_08_acceptance_criteria.txt",
+          "score": 0.4086807370185852
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "score": 0.388491153717041
+        },
+        {
+          "document": "docs/sample.txt",
+          "score": 0.3842926025390625
+        }
+      ],
+      "graph_top_5": [],
+      "seed_entities": [],
+      "required_documents_missed_by_graph": [
+        "docs/benchmark_06_governance.txt"
+      ],
+      "failure_category": "1. entity extraction failure",
+      "classification_rationale": "The access-rule and decision concepts in the question were not retained as graph entities.",
+      "benchmark_note": null
+    },
+    {
+      "id": "q010",
+      "type": "relationship",
+      "question": "Catalog Service の設計責任者は誰ですか？",
+      "required_relevant_documents": [
+        "docs/benchmark_03_architecture.txt",
+        "docs/benchmark_02_team_roles.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "score": 0.5263703465461731
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "score": 0.4601527452468872
+        },
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "score": 0.4229854941368103
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "score": 0.40735453367233276
+        },
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "score": 0.3650639057159424
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 19.666666666666664,
+          "traversal_path": [
+            "Catalog Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "chunk_idx": 0,
+          "score": 14.833333333333334,
+          "traversal_path": [
+            "Catalog Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "chunk_idx": 0,
+          "score": 13.833333333333336,
+          "traversal_path": [
+            "Catalog Service",
+            "Gateway API"
+          ]
+        },
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "chunk_idx": 0,
+          "score": 13.333333333333337,
+          "traversal_path": [
+            "Catalog Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 13.166666666666668,
+          "traversal_path": [
+            "Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Catalog Service"
+      ],
+      "required_documents_missed_by_graph": [
+        "docs/benchmark_02_team_roles.txt"
+      ],
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "Catalog Service is a seed and has provenance for the missed document, but it was ranked below top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "q011",
+      "type": "relationship",
+      "question": "Policy Service の公開前レビュー責任者は誰ですか？",
+      "required_relevant_documents": [
+        "docs/benchmark_03_architecture.txt",
+        "docs/benchmark_02_team_roles.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "score": 0.48424339294433594
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "score": 0.4624096751213074
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "score": 0.4003976583480835
+        },
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "score": 0.396531343460083
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "score": 0.38237905502319336
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 19.833333333333332,
+          "traversal_path": [
+            "Policy Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "chunk_idx": 0,
+          "score": 16.833333333333332,
+          "traversal_path": [
+            "Policy Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 15.666666666666668,
+          "traversal_path": [
+            "Policy Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "chunk_idx": 0,
+          "score": 14.833333333333334,
+          "traversal_path": [
+            "Policy Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "chunk_idx": 0,
+          "score": 13.333333333333337,
+          "traversal_path": [
+            "Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Policy Service"
+      ],
+      "required_documents_missed_by_graph": [
+        "docs/benchmark_02_team_roles.txt",
+        "docs/benchmark_03_architecture.txt"
+      ],
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "Policy Service is a seed and has provenance for both missed documents, but neither appeared in top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "q012",
+      "type": "relationship",
+      "question": "検索失敗の一次対応を担当するのは誰ですか？",
+      "required_relevant_documents": [
+        "docs/benchmark_07_operations.txt",
+        "docs/benchmark_02_team_roles.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "score": 0.4584193825721741
+        },
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "score": 0.4197671413421631
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "score": 0.41186732053756714
+        },
+        {
+          "document": "docs/benchmark_08_acceptance_criteria.txt",
+          "score": 0.3886294960975647
+        },
+        {
+          "document": "docs/sample.txt",
+          "score": 0.3832281827926636
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 18.5,
+          "traversal_path": [
+            "検索失敗"
+          ]
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "chunk_idx": 0,
+          "score": 9.166666666666664,
+          "traversal_path": [
+            "検索失敗",
+            "高橋悠"
+          ]
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "chunk_idx": 0,
+          "score": 5.166666666666667,
+          "traversal_path": [
+            "検索失敗",
+            "高橋悠"
+          ]
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "chunk_idx": 0,
+          "score": 4.333333333333333,
+          "traversal_path": [
+            "検索失敗",
+            "高橋悠",
+            "Catalog Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 3.3333333333333335,
+          "traversal_path": [
+            "検索失敗",
+            "高橋悠",
+            "Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "検索失敗"
+      ],
+      "required_documents_missed_by_graph": [],
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "q013",
+      "type": "relationship",
+      "question": "調達部で製品仕様書の更新確認を担当するのは誰ですか？",
+      "required_relevant_documents": [
+        "docs/benchmark_02_team_roles.txt",
+        "docs/benchmark_06_governance.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "score": 0.5224997997283936
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "score": 0.5090563297271729
+        },
+        {
+          "document": "docs/benchmark_08_acceptance_criteria.txt",
+          "score": 0.4304739236831665
+        },
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "score": 0.4239872097969055
+        },
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "score": 0.38274264335632324
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "chunk_idx": 0,
+          "score": 6.166666666666666,
+          "traversal_path": [
+            "調達部"
+          ]
+        },
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "chunk_idx": 0,
+          "score": 3.833333333333333,
+          "traversal_path": [
+            "調達部"
+          ]
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "chunk_idx": 0,
+          "score": 1.3333333333333333,
+          "traversal_path": [
+            "調達部",
+            "仕様書サンプル確認",
+            "伊藤彩"
+          ]
+        },
+        {
+          "document": "docs/benchmark_08_acceptance_criteria.txt",
+          "chunk_idx": 0,
+          "score": 1.3333333333333333,
+          "traversal_path": [
+            "調達部",
+            "仕様書サンプル確認",
+            "伊藤彩"
+          ]
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 0.6666666666666666,
+          "traversal_path": [
+            "調達部",
+            "仕様書サンプル確認",
+            "伊藤彩"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "調達部"
+      ],
+      "required_documents_missed_by_graph": [],
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "q014",
+      "type": "relationship",
+      "question": "Gateway API または Catalog Service の技術問題は誰にエスカレーションしますか？",
+      "required_relevant_documents": [
+        "docs/benchmark_07_operations.txt",
+        "docs/benchmark_02_team_roles.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "score": 0.5196226835250854
+        },
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "score": 0.48739302158355713
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "score": 0.4414166212081909
+        },
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "score": 0.41504931449890137
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "score": 0.41147226095199585
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 23.333333333333332,
+          "traversal_path": [
+            "Catalog Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "chunk_idx": 0,
+          "score": 17.833333333333336,
+          "traversal_path": [
+            "Gateway API"
+          ]
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "chunk_idx": 0,
+          "score": 16.333333333333332,
+          "traversal_path": [
+            "Catalog Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 14.666666666666668,
+          "traversal_path": [
+            "Catalog Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "chunk_idx": 0,
+          "score": 14.33333333333334,
+          "traversal_path": [
+            "Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Catalog Service",
+        "Gateway API"
+      ],
+      "required_documents_missed_by_graph": [
+        "docs/benchmark_02_team_roles.txt"
+      ],
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "Both service names are seeds and the missed team-role document is reachable, but it was ranked below top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "q015",
+      "type": "relationship",
+      "question": "アクセス規則に関するエスカレーション先は誰ですか？",
+      "required_relevant_documents": [
+        "docs/benchmark_07_operations.txt",
+        "docs/benchmark_02_team_roles.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "score": 0.3656427264213562
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "score": 0.36184918880462646
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "score": 0.36033719778060913
+        },
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "score": 0.3534914255142212
+        },
+        {
+          "document": "docs/sample.txt",
+          "score": 0.33983415365219116
+        }
+      ],
+      "graph_top_5": [],
+      "seed_entities": [],
+      "required_documents_missed_by_graph": [
+        "docs/benchmark_02_team_roles.txt",
+        "docs/benchmark_07_operations.txt"
+      ],
+      "failure_category": "1. entity extraction failure",
+      "classification_rationale": "The source discusses access rules, but no matching access-rule entity exists in the graph.",
+      "benchmark_note": null
+    },
+    {
+      "id": "q016",
+      "type": "relationship",
+      "question": "公開延期の連絡を調達部の窓口へ行うのは誰ですか？",
+      "required_relevant_documents": [
+        "docs/benchmark_04_release_plan.txt",
+        "docs/benchmark_02_team_roles.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/sample.txt",
+          "score": 0.46563947200775146
+        },
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "score": 0.43806570768356323
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "score": 0.4316713213920593
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "score": 0.41738247871398926
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "score": 0.3883422017097473
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "chunk_idx": 0,
+          "score": 6.166666666666666,
+          "traversal_path": [
+            "調達部"
+          ]
+        },
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "chunk_idx": 0,
+          "score": 3.833333333333333,
+          "traversal_path": [
+            "調達部"
+          ]
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "chunk_idx": 0,
+          "score": 1.3333333333333333,
+          "traversal_path": [
+            "調達部",
+            "仕様書サンプル確認",
+            "伊藤彩"
+          ]
+        },
+        {
+          "document": "docs/benchmark_08_acceptance_criteria.txt",
+          "chunk_idx": 0,
+          "score": 1.3333333333333333,
+          "traversal_path": [
+            "調達部",
+            "仕様書サンプル確認",
+            "伊藤彩"
+          ]
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 0.6666666666666666,
+          "traversal_path": [
+            "調達部",
+            "仕様書サンプル確認",
+            "伊藤彩"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "調達部"
+      ],
+      "required_documents_missed_by_graph": [],
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "q017",
+      "type": "multi_hop",
+      "question": "Orion 2.1 の公開前に完了が必要な三つの確認は何ですか？",
+      "required_relevant_documents": [
+        "docs/benchmark_04_release_plan.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "score": 0.6185286641120911
+        },
+        {
+          "document": "docs/benchmark_08_acceptance_criteria.txt",
+          "score": 0.5299809575080872
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "score": 0.4081202745437622
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "score": 0.3447127342224121
+        },
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "score": 0.34446364641189575
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "chunk_idx": 0,
+          "score": 17.0,
+          "traversal_path": [
+            "Orion 2.1"
+          ]
+        },
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "chunk_idx": 0,
+          "score": 14.500000000000004,
+          "traversal_path": [
+            "Orion 2.1"
+          ]
+        },
+        {
+          "document": "docs/benchmark_08_acceptance_criteria.txt",
+          "chunk_idx": 0,
+          "score": 10.833333333333336,
+          "traversal_path": [
+            "Orion 2.1"
+          ]
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "chunk_idx": 0,
+          "score": 10.66666666666667,
+          "traversal_path": [
+            "Orion 2.1",
+            "Atlas"
+          ]
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "chunk_idx": 0,
+          "score": 10.166666666666664,
+          "traversal_path": [
+            "Orion 2.1",
+            "Atlas"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Orion 2.1"
+      ],
+      "required_documents_missed_by_graph": [],
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": "does not require graph traversal"
+    },
+    {
+      "id": "q018",
+      "type": "multi_hop",
+      "question": "未設定の公開規則を持つ文書が検索結果に返らないようにするコンポーネントは何ですか？",
+      "required_relevant_documents": [
+        "docs/benchmark_03_architecture.txt",
+        "docs/benchmark_06_governance.txt",
+        "docs/benchmark_08_acceptance_criteria.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "score": 0.5400276184082031
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "score": 0.46282243728637695
+        },
+        {
+          "document": "docs/benchmark_08_acceptance_criteria.txt",
+          "score": 0.4379991888999939
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "score": 0.4194525480270386
+        },
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "score": 0.38824892044067383
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/sample.txt",
+          "chunk_idx": 0,
+          "score": 13.833333333333334,
+          "traversal_path": [
+            "文書"
+          ]
+        },
+        {
+          "document": "docs/sample.txt",
+          "chunk_idx": 1,
+          "score": 11.833333333333334,
+          "traversal_path": [
+            "文書"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "文書"
+      ],
+      "required_documents_missed_by_graph": [
+        "docs/benchmark_03_architecture.txt",
+        "docs/benchmark_06_governance.txt",
+        "docs/benchmark_08_acceptance_criteria.txt"
+      ],
+      "failure_category": "3. seed entity matching failure",
+      "classification_rationale": "The generic word document matched only the unrelated sample-document node instead of the intended policy entities.",
+      "benchmark_note": null
+    },
+    {
+      "id": "q019",
+      "type": "multi_hop",
+      "question": "Gateway API の証明書障害では、誰が一次対応し、誰が技術調査を担当しましたか？",
+      "required_relevant_documents": [
+        "docs/benchmark_05_incident_report.txt",
+        "docs/benchmark_02_team_roles.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "score": 0.6064561605453491
+        },
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "score": 0.5398843884468079
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "score": 0.5042625665664673
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "score": 0.45815610885620117
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "score": 0.4110201597213745
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 21.833333333333332,
+          "traversal_path": [
+            "Gateway API"
+          ]
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "chunk_idx": 0,
+          "score": 17.333333333333336,
+          "traversal_path": [
+            "Gateway API"
+          ]
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "chunk_idx": 0,
+          "score": 12.5,
+          "traversal_path": [
+            "Gateway API"
+          ]
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 10.333333333333336,
+          "traversal_path": [
+            "Gateway API"
+          ]
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "chunk_idx": 0,
+          "score": 10.0,
+          "traversal_path": [
+            "Gateway API",
+            "Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Gateway API"
+      ],
+      "required_documents_missed_by_graph": [],
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "q020",
+      "type": "multi_hop",
+      "question": "公開判定前日に未解決の高優先度障害がある場合、公開と調達部連絡はどうなりますか？",
+      "required_relevant_documents": [
+        "docs/benchmark_04_release_plan.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/sample.txt",
+          "score": 0.45247066020965576
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "score": 0.39913487434387207
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "score": 0.3823609948158264
+        },
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "score": 0.3468667268753052
+        },
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "score": 0.3334020972251892
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "chunk_idx": 0,
+          "score": 13.0,
+          "traversal_path": [
+            "調達部"
+          ]
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "chunk_idx": 0,
+          "score": 4.833333333333333,
+          "traversal_path": [
+            "高優先度障害"
+          ]
+        },
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "chunk_idx": 0,
+          "score": 4.166666666666666,
+          "traversal_path": [
+            "調達部"
+          ]
+        },
+        {
+          "document": "docs/benchmark_08_acceptance_criteria.txt",
+          "chunk_idx": 0,
+          "score": 1.9999999999999998,
+          "traversal_path": [
+            "高優先度障害",
+            "証明書更新失敗",
+            "Gateway API"
+          ]
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "chunk_idx": 0,
+          "score": 1.3333333333333333,
+          "traversal_path": [
+            "高優先度障害",
+            "公開予定日",
+            "伊藤彩"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "高優先度障害",
+        "調達部"
+      ],
+      "required_documents_missed_by_graph": [],
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": "does not require graph traversal"
+    },
+    {
+      "id": "q021",
+      "type": "multi_hop",
+      "question": "平均応答時間が2秒を超える状態が15分続いた場合、誰が何として記録しますか？",
+      "required_relevant_documents": [
+        "docs/benchmark_07_operations.txt",
+        "docs/benchmark_02_team_roles.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "score": 0.38796716928482056
+        },
+        {
+          "document": "docs/sample.txt",
+          "score": 0.33640003204345703
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "score": 0.2955997586250305
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "score": 0.295271635055542
+        },
+        {
+          "document": "docs/sample.txt",
+          "score": 0.27900058031082153
+        }
+      ],
+      "graph_top_5": [],
+      "seed_entities": [],
+      "required_documents_missed_by_graph": [
+        "docs/benchmark_02_team_roles.txt",
+        "docs/benchmark_07_operations.txt"
+      ],
+      "failure_category": "1. entity extraction failure",
+      "classification_rationale": "Average response time was not extracted as an entity even though the operations source contains the concept.",
+      "benchmark_note": null
+    },
+    {
+      "id": "q022",
+      "type": "multi_hop",
+      "question": "Vector Index が公開可否を判断しないため、アクセス規則の変更はどこへ反映しますか？",
+      "required_relevant_documents": [
+        "docs/benchmark_03_architecture.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "score": 0.4200969338417053
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "score": 0.4060004949569702
+        },
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "score": 0.37127089500427246
+        },
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "score": 0.36507105827331543
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "score": 0.3596910834312439
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "chunk_idx": 0,
+          "score": 15.0,
+          "traversal_path": [
+            "Vector Index"
+          ]
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "chunk_idx": 0,
+          "score": 12.5,
+          "traversal_path": [
+            "Vector Index"
+          ]
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "chunk_idx": 0,
+          "score": 11.500000000000002,
+          "traversal_path": [
+            "Vector Index"
+          ]
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "chunk_idx": 0,
+          "score": 10.666666666666668,
+          "traversal_path": [
+            "Vector Index"
+          ]
+        },
+        {
+          "document": "docs/benchmark_08_acceptance_criteria.txt",
+          "chunk_idx": 0,
+          "score": 8.500000000000002,
+          "traversal_path": [
+            "Vector Index"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Vector Index"
+      ],
+      "required_documents_missed_by_graph": [],
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": "does not require graph traversal"
+    },
+    {
+      "id": "q023",
+      "type": "multi_hop",
+      "question": "Orion 2.1 の公開可否を佐藤真央が判断する前に、田中健と鈴木梨奈はそれぞれ何の結果を提出しますか？",
+      "required_relevant_documents": [
+        "docs/benchmark_08_acceptance_criteria.txt",
+        "docs/benchmark_04_release_plan.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "score": 0.6476311683654785
+        },
+        {
+          "document": "docs/benchmark_08_acceptance_criteria.txt",
+          "score": 0.5415608882904053
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "score": 0.4279184341430664
+        },
+        {
+          "document": "docs/benchmark_03_architecture.txt",
+          "score": 0.4276010990142822
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "score": 0.37428855895996094
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "chunk_idx": 0,
+          "score": 28.166666666666664,
+          "traversal_path": [
+            "Orion 2.1"
+          ]
+        },
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 21.5,
+          "traversal_path": [
+            "田中健"
+          ]
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "chunk_idx": 0,
+          "score": 21.0,
+          "traversal_path": [
+            "佐藤真央"
+          ]
+        },
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "chunk_idx": 0,
+          "score": 20.666666666666664,
+          "traversal_path": [
+            "Orion 2.1"
+          ]
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "chunk_idx": 0,
+          "score": 20.666666666666664,
+          "traversal_path": [
+            "田中健"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Orion 2.1",
+        "佐藤真央",
+        "鈴木梨奈",
+        "田中健"
+      ],
+      "required_documents_missed_by_graph": [
+        "docs/benchmark_08_acceptance_criteria.txt"
+      ],
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "Named seeds exist and the acceptance-criteria document is reachable, but it was ranked below top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "q024",
+      "type": "multi_hop",
+      "question": "2026年6月の障害で Policy Service のレビューが不要だった理由は何ですか？",
+      "required_relevant_documents": [
+        "docs/benchmark_05_incident_report.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "score": 0.5511264801025391
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "score": 0.4338533878326416
+        },
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "score": 0.4324839115142822
+        },
+        {
+          "document": "docs/sample.txt",
+          "score": 0.41056883335113525
+        },
+        {
+          "document": "docs/benchmark_02_team_roles.txt",
+          "score": 0.36506420373916626
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "docs/benchmark_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 19.833333333333332,
+          "traversal_path": [
+            "Policy Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_05_incident_report.txt",
+          "chunk_idx": 0,
+          "score": 16.833333333333332,
+          "traversal_path": [
+            "Policy Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 15.666666666666668,
+          "traversal_path": [
+            "Policy Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_01_program_overview.txt",
+          "chunk_idx": 0,
+          "score": 14.833333333333334,
+          "traversal_path": [
+            "Policy Service"
+          ]
+        },
+        {
+          "document": "docs/benchmark_04_release_plan.txt",
+          "chunk_idx": 0,
+          "score": 13.333333333333337,
+          "traversal_path": [
+            "Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Policy Service"
+      ],
+      "required_documents_missed_by_graph": [],
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": "does not require graph traversal"
+    }
+  ]
+}
