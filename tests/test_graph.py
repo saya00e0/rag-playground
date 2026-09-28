@@ -1,6 +1,7 @@
 import unittest
 
 from graph.builder import ChunkRef, GraphBuilder, graph_statistics
+from graph.curation import apply_curation
 from graph.extractor import Extraction, Entity, Relation, normalize_entity, parse_extraction
 from graph.retriever import GraphRetriever
 
@@ -54,6 +55,18 @@ class GraphTests(unittest.TestCase):
         result = GraphRetriever(self.graph).retrieve("田中健の担当サービスは？", depth=1, max_chunks=5)
         self.assertEqual(result[0].source, "docs/a.txt")
         self.assertEqual([item.source for item in result], ["docs/a.txt", "docs/b.txt"])
+
+    def test_curation_reverses_only_the_selected_edge(self):
+        curated, log = apply_curation(
+            self.graph,
+            {
+                "id": "fixture",
+                "reverse_edges": [{"source": "田中健", "type": "owns", "target": "catalog service", "chunk_ref": "docs/a.txt#0", "reason": "fixture"}],
+            },
+        )
+        self.assertEqual(self.graph["edges"][0]["source"], "田中健")
+        self.assertEqual(curated["edges"][0]["source"], "catalog service")
+        self.assertEqual(len(log["operations"]), 1)
 
 
 if __name__ == "__main__":

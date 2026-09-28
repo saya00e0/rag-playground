@@ -1,0 +1,33 @@
+{
+  "id": "atlas-curation-v1",
+  "description": "High-confidence direction and type corrections; no new facts are added.",
+  "set_node_types": [
+    {"id": "atlas", "types": ["organization"], "reason": "Atlas is described as a program, not a service."},
+    {"id": "orion 2.1", "types": ["event"], "reason": "Orion 2.1 is described as a release."},
+    {"id": "2026年度", "types": ["event"], "reason": "A program year is a time period, not a metric."},
+    {"id": "高優先度障害", "types": ["event"], "reason": "An incident is an event, not a metric."},
+    {"id": "検索要求", "types": ["event"], "reason": "A search request is an event, not a metric."},
+    {"id": "性能障害", "types": ["event"], "reason": "A performance incident is an event, not a metric."}
+  ],
+  "reverse_edges": [
+    {"source": "atlas", "type": "responsible_for", "target": "佐藤真央", "chunk_ref": "docs/benchmark_01_program_overview.txt#0", "reason": "The document states that Sato is the program lead for Atlas."},
+    {"source": "atlas", "type": "responsible_for", "target": "田中健", "chunk_ref": "docs/benchmark_01_program_overview.txt#0", "reason": "The document states that Tanaka is the technical lead for Atlas."},
+    {"source": "policy service", "type": "responsible_for", "target": "鈴木梨奈", "chunk_ref": "docs/benchmark_03_architecture.txt#0", "reason": "The document states that Suzuki is responsible for the review."},
+    {"source": "catalog service", "type": "responsible_for", "target": "プラットフォーム部", "chunk_ref": "docs/benchmark_03_architecture.txt#0", "reason": "The document states that the Platform Department owns Catalog Service."},
+    {"source": "負荷試験", "type": "responsible_for", "target": "田中健", "chunk_ref": "docs/benchmark_04_release_plan.txt#0", "reason": "The document assigns the load test to Tanaka."},
+    {"source": "アクセス規則レビュー", "type": "responsible_for", "target": "鈴木梨奈", "chunk_ref": "docs/benchmark_04_release_plan.txt#0", "reason": "The document assigns the access-rule review to Suzuki."},
+    {"source": "仕様書サンプル確認", "type": "responsible_for", "target": "伊藤彩", "chunk_ref": "docs/benchmark_04_release_plan.txt#0", "reason": "The document assigns sample confirmation to Ito."},
+    {"source": "証明書期限の監視", "type": "requires", "target": "高橋悠", "chunk_ref": "docs/benchmark_05_incident_report.txt#0", "reason": "The document states that Takahashi adds certificate-expiry monitoring."},
+    {"source": "gateway api", "type": "affects", "target": "証明書更新失敗", "chunk_ref": "docs/benchmark_05_incident_report.txt#0", "reason": "The certificate failure affected Gateway API, not the reverse."}
+  ],
+  "remove_edges": [
+    {"source": "atlas", "type": "uses", "target": "orion 2.1", "chunk_ref": "docs/benchmark_01_program_overview.txt#0", "reason": "The release belongs to Atlas; the constrained vocabulary cannot express this relation without distortion."},
+    {"source": "policy service", "type": "filters", "target": "atlas", "chunk_ref": "docs/benchmark_01_program_overview.txt#0", "reason": "Policy Service filters candidate documents, not the Atlas program."},
+    {"source": "vector index", "type": "routes_to", "target": "atlas", "chunk_ref": "docs/benchmark_01_program_overview.txt#0", "reason": "Vector Index generates candidates; it does not route to Atlas."},
+    {"source": "佐藤真央", "type": "escalates_to", "target": "田中健", "chunk_ref": "docs/benchmark_02_team_roles.txt#0", "reason": "The source names an escalation destination but does not state that Sato escalates."},
+    {"source": "鈴木梨奈", "type": "escalates_to", "target": "田中健", "chunk_ref": "docs/benchmark_02_team_roles.txt#0", "reason": "The source names separate escalation destinations but does not connect Suzuki to Tanaka."},
+    {"source": "atlas", "type": "depends_on", "target": "検索要求の復旧", "chunk_ref": "docs/benchmark_05_incident_report.txt#0", "reason": "The source reports recovery; it does not make Atlas depend on that event."},
+    {"source": "policy service", "type": "depends_on", "target": "検索要求の復旧", "chunk_ref": "docs/benchmark_05_incident_report.txt#0", "reason": "The source says Policy Service was normal during the incident."},
+    {"source": "vector index", "type": "depends_on", "target": "検索要求の復旧", "chunk_ref": "docs/benchmark_05_incident_report.txt#0", "reason": "The source says Vector Index was normal during the incident."}
+  ]
+}
