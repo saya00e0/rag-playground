@@ -74,6 +74,16 @@ def suggested_failure_category(required: set[str], retrieved: set[str], seeds: l
     return "4. missing graph edge"
 
 
+def automatic_rationale(category: Optional[str]) -> Optional[str]:
+    rationales = {
+        "3. seed entity matching failure": "No graph entity was matched from the question, so traversal could not begin.",
+        "5. traversal/ranking failure": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+        "1. entity extraction failure": "At least one missed required document has no entity provenance in the graph.",
+        "4. missing graph edge": "Required document provenance exists in the graph but was not reached from the matched seeds within the configured traversal.",
+    }
+    return rationales.get(category)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--graph", default="eval/results/graph_v2.json")
@@ -100,6 +110,7 @@ def main() -> None:
         graph_chunks = retriever.retrieve(item.question, depth=args.depth, max_entities=args.max_entities, max_chunks=args.top_k)
         required = set(item.relevant_docs)
         retrieved = {chunk.source for chunk in graph_chunks}
+        vector_retrieved = set(vector_rows[item.id]["retrieved_doc_ids"])
         inferred = suggested_failure_category(required, retrieved, seeds, paths, graph)
         manual = MANUAL_FAILURE_CLASSIFICATIONS.get(item.id)
         records.append(
@@ -123,8 +134,9 @@ def main() -> None:
                 ],
                 "seed_entities": [next(node["name"] for node in graph["nodes"] if node["id"] == seed) for seed in seeds],
                 "required_documents_missed_by_graph": sorted(required.difference(retrieved)),
+                "vector_retrieves_all_required_evidence": required.issubset(vector_retrieved),
                 "failure_category": manual[0] if manual else inferred,
-                "classification_rationale": manual[1] if manual else None,
+                "classification_rationale": manual[1] if manual else automatic_rationale(inferred),
                 "benchmark_note": "does not require graph traversal" if item.type == "multi_hop" and len(item.relevant_docs) == 1 else None,
             }
         )

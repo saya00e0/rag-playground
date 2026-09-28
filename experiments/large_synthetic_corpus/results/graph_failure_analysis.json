@@ -1,0 +1,3479 @@
+{
+  "graph_variant": "auto_v2",
+  "graph_path": "experiments/large_synthetic_corpus/results/graph_auto_v2.json",
+  "depth": 2,
+  "max_entities": 5,
+  "top_k": 5,
+  "records": [
+    {
+      "id": "lq003",
+      "type": "relationship",
+      "question": "Aurora Gateway API または Aurora Catalog Service の技術問題は誰にエスカレーションしますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/01_aurora_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/01_aurora_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_03_architecture.txt",
+          "score": 0.6515945792198181
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_02_team.txt",
+          "score": 0.6496270298957825
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_10_decision_log.txt",
+          "score": 0.6037009954452515
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_07_operations.txt",
+          "score": 0.5974892973899841
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_09_integration.txt",
+          "score": 0.5894119143486023
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 18.0,
+          "traversal_path": [
+            "Aurora Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_02_team.txt",
+          "chunk_idx": 0,
+          "score": 17.5,
+          "traversal_path": [
+            "Aurora Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 16.666666666666664,
+          "traversal_path": [
+            "Aurora Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 16.666666666666664,
+          "traversal_path": [
+            "Aurora Gateway API",
+            "メンテナンス"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 16.0,
+          "traversal_path": [
+            "Aurora Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Aurora Catalog Service",
+        "Aurora Gateway API",
+        "Catalog Service",
+        "Gateway API",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq004",
+      "type": "relationship",
+      "question": "Aurora Policy Service の公開前レビュー責任者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/01_aurora_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/01_aurora_03_architecture.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_03_architecture.txt",
+          "score": 0.6803615689277649
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_02_team.txt",
+          "score": 0.6134801506996155
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_07_operations.txt",
+          "score": 0.5957238078117371
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_05_incident.txt",
+          "score": 0.5681041479110718
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_10_decision_log.txt",
+          "score": 0.5670703053474426
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 23.833333333333332,
+          "traversal_path": [
+            "Aurora"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 20.0,
+          "traversal_path": [
+            "Aurora Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_02_team.txt",
+          "chunk_idx": 0,
+          "score": 19.166666666666664,
+          "traversal_path": [
+            "Aurora"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 16.5,
+          "traversal_path": [
+            "Aurora Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 16.5,
+          "traversal_path": [
+            "Aurora Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Aurora Policy Service",
+        "Service",
+        "Aurora"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/01_aurora_03_architecture.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq005",
+      "type": "multi_hop",
+      "question": "Aurora 3.1 の公開前に必要な Aurora Catalog Service の負荷試験と Aurora Policy Service のアクセス規則レビューは、それぞれ誰が担当しますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/01_aurora_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/01_aurora_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/01_aurora_08_acceptance.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_03_architecture.txt",
+          "score": 0.7485480308532715
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_02_team.txt",
+          "score": 0.6710275411605835
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_10_decision_log.txt",
+          "score": 0.6468299627304077
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_04_release.txt",
+          "score": 0.6433672308921814
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_10_decision_log.txt",
+          "score": 0.6408289074897766
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 20.833333333333332,
+          "traversal_path": [
+            "Aurora 3.1"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 20.333333333333332,
+          "traversal_path": [
+            "Aurora Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_02_team.txt",
+          "chunk_idx": 0,
+          "score": 19.333333333333332,
+          "traversal_path": [
+            "Aurora Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 18.166666666666664,
+          "traversal_path": [
+            "Aurora Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 17.5,
+          "traversal_path": [
+            "Aurora 3.1"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Aurora Catalog Service",
+        "Aurora Policy Service",
+        "Catalog Service",
+        "Aurora 3.1",
+        "アクセス規則レビュー"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/01_aurora_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/01_aurora_04_release.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq006",
+      "type": "multi_hop",
+      "question": "Aurora Gateway API の証明書更新障害では、誰が一次対応し、誰が技術調査を担当し、なぜ Aurora Policy Service の臨時レビューが不要でしたか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/01_aurora_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/01_aurora_05_incident.txt",
+        "experiments/large_synthetic_corpus/docs/01_aurora_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_05_incident.txt",
+          "score": 0.7099583148956299
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_03_architecture.txt",
+          "score": 0.7091803550720215
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_07_operations.txt",
+          "score": 0.6493545770645142
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_02_team.txt",
+          "score": 0.6371818780899048
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_07_operations.txt",
+          "score": 0.6217547655105591
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 25.333333333333332,
+          "traversal_path": [
+            "Aurora"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_02_team.txt",
+          "chunk_idx": 0,
+          "score": 20.666666666666664,
+          "traversal_path": [
+            "Aurora"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 20.33333333333333,
+          "traversal_path": [
+            "Aurora Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 20.0,
+          "traversal_path": [
+            "Aurora Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/01_aurora_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 19.333333333333332,
+          "traversal_path": [
+            "Aurora Gateway API"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Aurora Policy Service",
+        "Aurora Gateway API",
+        "Gateway API",
+        "Service",
+        "Aurora"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq009",
+      "type": "relationship",
+      "question": "Borealis Gateway API または Borealis Catalog Service の技術問題は誰にエスカレーションしますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/02_borealis_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/02_borealis_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_03_architecture.txt",
+          "score": 0.6813232898712158
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_02_team.txt",
+          "score": 0.6777909398078918
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_07_operations.txt",
+          "score": 0.6533306837081909
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_09_integration.txt",
+          "score": 0.617029070854187
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_05_incident.txt",
+          "score": 0.6076767444610596
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_02_team.txt",
+          "chunk_idx": 0,
+          "score": 17.5,
+          "traversal_path": [
+            "Borealis Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 17.33333333333333,
+          "traversal_path": [
+            "Borealis Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_09_integration.txt",
+          "chunk_idx": 0,
+          "score": 16.333333333333332,
+          "traversal_path": [
+            "Borealis Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_04_release.txt",
+          "chunk_idx": 0,
+          "score": 14.833333333333336,
+          "traversal_path": [
+            "Borealis Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 14.500000000000002,
+          "traversal_path": [
+            "Borealis Gateway API",
+            "メンテナンス"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Borealis Catalog Service",
+        "Borealis Gateway API",
+        "Catalog Service",
+        "Gateway API",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/02_borealis_07_operations.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq010",
+      "type": "relationship",
+      "question": "Borealis Policy Service の公開前レビュー責任者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/02_borealis_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/02_borealis_03_architecture.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_03_architecture.txt",
+          "score": 0.6726016998291016
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_02_team.txt",
+          "score": 0.6496454477310181
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_05_incident.txt",
+          "score": 0.6068688631057739
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_06_governance.txt",
+          "score": 0.5914573669433594
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_10_decision_log.txt",
+          "score": 0.5789095759391785
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 20.5,
+          "traversal_path": [
+            "Borealis"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_02_team.txt",
+          "chunk_idx": 0,
+          "score": 19.333333333333332,
+          "traversal_path": [
+            "Borealis"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_04_release.txt",
+          "chunk_idx": 0,
+          "score": 19.333333333333332,
+          "traversal_path": [
+            "Borealis Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 18.833333333333332,
+          "traversal_path": [
+            "Borealis"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 15.333333333333332,
+          "traversal_path": [
+            "Borealis Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Borealis Policy Service",
+        "Borealis",
+        "Service"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/02_borealis_03_architecture.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq011",
+      "type": "multi_hop",
+      "question": "Borealis 3.2 の公開前に必要な Borealis Catalog Service の負荷試験と Borealis Policy Service のアクセス規則レビューは、それぞれ誰が担当しますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/02_borealis_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/02_borealis_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/02_borealis_08_acceptance.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_03_architecture.txt",
+          "score": 0.7852693796157837
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_02_team.txt",
+          "score": 0.7029179930686951
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_04_release.txt",
+          "score": 0.6658120155334473
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_08_acceptance.txt",
+          "score": 0.6604164242744446
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_07_operations.txt",
+          "score": 0.6599810123443604
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 23.833333333333336,
+          "traversal_path": [
+            "Borealis 3.2"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_04_release.txt",
+          "chunk_idx": 0,
+          "score": 23.66666666666666,
+          "traversal_path": [
+            "Borealis 3.2"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.833333333333332,
+          "traversal_path": [
+            "Borealis Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_09_integration.txt",
+          "chunk_idx": 0,
+          "score": 16.833333333333332,
+          "traversal_path": [
+            "Borealis Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 16.500000000000004,
+          "traversal_path": [
+            "Catalog Service",
+            "三浦陽"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Borealis Catalog Service",
+        "Borealis Policy Service",
+        "Catalog Service",
+        "Borealis 3.2",
+        "アクセス規則レビュー"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/02_borealis_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/02_borealis_08_acceptance.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq012",
+      "type": "multi_hop",
+      "question": "Borealis Gateway API の証明書更新障害では、誰が一次対応し、誰が技術調査を担当し、なぜ Borealis Policy Service の臨時レビューが不要でしたか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/02_borealis_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/02_borealis_05_incident.txt",
+        "experiments/large_synthetic_corpus/docs/02_borealis_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_03_architecture.txt",
+          "score": 0.7234983444213867
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_05_incident.txt",
+          "score": 0.7202436923980713
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_07_operations.txt",
+          "score": 0.6783496141433716
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_02_team.txt",
+          "score": 0.657785177230835
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_07_operations.txt",
+          "score": 0.6410793662071228
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 22.0,
+          "traversal_path": [
+            "Borealis"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 21.5,
+          "traversal_path": [
+            "Borealis"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_02_team.txt",
+          "chunk_idx": 0,
+          "score": 20.833333333333332,
+          "traversal_path": [
+            "Borealis"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_04_release.txt",
+          "chunk_idx": 0,
+          "score": 19.333333333333332,
+          "traversal_path": [
+            "Borealis Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/02_borealis_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 17.333333333333332,
+          "traversal_path": [
+            "Borealis"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Borealis Policy Service",
+        "Borealis Gateway API",
+        "Gateway API",
+        "Borealis",
+        "Service"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq015",
+      "type": "relationship",
+      "question": "Cirrus Gateway API または Cirrus Catalog Service の技術問題は誰にエスカレーションしますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/03_cirrus_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/03_cirrus_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_02_team.txt",
+          "score": 0.6595942974090576
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_03_architecture.txt",
+          "score": 0.6242069005966187
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_07_operations.txt",
+          "score": 0.6095749139785767
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_09_integration.txt",
+          "score": 0.602488100528717
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_05_incident.txt",
+          "score": 0.5817618370056152
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_02_team.txt",
+          "chunk_idx": 0,
+          "score": 17.5,
+          "traversal_path": [
+            "Cirrus Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 17.33333333333333,
+          "traversal_path": [
+            "Cirrus Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 17.0,
+          "traversal_path": [
+            "Cirrus Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 14.66666666666667,
+          "traversal_path": [
+            "Cirrus Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_09_integration.txt",
+          "chunk_idx": 0,
+          "score": 14.166666666666664,
+          "traversal_path": [
+            "Cirrus Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Cirrus Catalog Service",
+        "Cirrus Gateway API",
+        "Catalog Service",
+        "Gateway API",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq016",
+      "type": "relationship",
+      "question": "Cirrus Policy Service の公開前レビュー責任者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/03_cirrus_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/03_cirrus_03_architecture.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_03_architecture.txt",
+          "score": 0.7002807855606079
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_02_team.txt",
+          "score": 0.6605366468429565
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_05_incident.txt",
+          "score": 0.6154176592826843
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_10_decision_log.txt",
+          "score": 0.5967727303504944
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_02_team.txt",
+          "score": 0.5961659550666809
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 20.666666666666664,
+          "traversal_path": [
+            "Cirrus"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333336,
+          "traversal_path": [
+            "Cirrus"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.166666666666664,
+          "traversal_path": [
+            "Cirrus"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 17.166666666666664,
+          "traversal_path": [
+            "Cirrus Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 16.333333333333332,
+          "traversal_path": [
+            "Cirrus Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Cirrus Policy Service",
+        "Service",
+        "Cirrus"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/03_cirrus_03_architecture.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq017",
+      "type": "multi_hop",
+      "question": "Cirrus 3.3 の公開前に必要な Cirrus Catalog Service の負荷試験と Cirrus Policy Service のアクセス規則レビューは、それぞれ誰が担当しますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/03_cirrus_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/03_cirrus_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/03_cirrus_08_acceptance.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_03_architecture.txt",
+          "score": 0.7370144724845886
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_02_team.txt",
+          "score": 0.680184543132782
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_04_release.txt",
+          "score": 0.6610393524169922
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_09_integration.txt",
+          "score": 0.6445474624633789
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_08_acceptance.txt",
+          "score": 0.6430935859680176
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 23.833333333333336,
+          "traversal_path": [
+            "Cirrus 3.3"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.666666666666664,
+          "traversal_path": [
+            "Cirrus Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Cirrus Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 16.833333333333332,
+          "traversal_path": [
+            "Cirrus Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 16.5,
+          "traversal_path": [
+            "Cirrus 3.3"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Cirrus Catalog Service",
+        "Cirrus Policy Service",
+        "Catalog Service",
+        "アクセス規則レビュー",
+        "Cirrus 3.3"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/03_cirrus_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/03_cirrus_04_release.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq018",
+      "type": "multi_hop",
+      "question": "Cirrus Gateway API の証明書更新障害では、誰が一次対応し、誰が技術調査を担当し、なぜ Cirrus Policy Service の臨時レビューが不要でしたか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/03_cirrus_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/03_cirrus_05_incident.txt",
+        "experiments/large_synthetic_corpus/docs/03_cirrus_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_05_incident.txt",
+          "score": 0.7173959612846375
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_03_architecture.txt",
+          "score": 0.6895548105239868
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_07_operations.txt",
+          "score": 0.6517584919929504
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_02_team.txt",
+          "score": 0.6425942182540894
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_07_operations.txt",
+          "score": 0.6383678913116455
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 22.166666666666664,
+          "traversal_path": [
+            "Cirrus"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 21.333333333333332,
+          "traversal_path": [
+            "Cirrus"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_02_team.txt",
+          "chunk_idx": 0,
+          "score": 19.833333333333332,
+          "traversal_path": [
+            "Cirrus"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 17.166666666666664,
+          "traversal_path": [
+            "Cirrus Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/03_cirrus_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 16.833333333333332,
+          "traversal_path": [
+            "Cirrus Gateway API"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Cirrus Policy Service",
+        "Cirrus Gateway API",
+        "Gateway API",
+        "Service",
+        "Cirrus"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/03_cirrus_05_incident.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq021",
+      "type": "relationship",
+      "question": "Drift Gateway API または Drift Catalog Service の技術問題は誰にエスカレーションしますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/04_drift_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/04_drift_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_02_team.txt",
+          "score": 0.6644929051399231
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_03_architecture.txt",
+          "score": 0.6589158773422241
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_07_operations.txt",
+          "score": 0.604647159576416
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_05_incident.txt",
+          "score": 0.5901176929473877
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_09_integration.txt",
+          "score": 0.5895869135856628
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 22.33333333333333,
+          "traversal_path": [
+            "Drift Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 19.5,
+          "traversal_path": [
+            "Drift Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 19.5,
+          "traversal_path": [
+            "Drift Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.666666666666664,
+          "traversal_path": [
+            "Drift Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.166666666666664,
+          "traversal_path": [
+            "Drift Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Drift Catalog Service",
+        "Drift Gateway API",
+        "Catalog Service",
+        "Gateway API",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq022",
+      "type": "relationship",
+      "question": "Drift Policy Service の公開前レビュー責任者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/04_drift_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/04_drift_03_architecture.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_03_architecture.txt",
+          "score": 0.7038697004318237
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_02_team.txt",
+          "score": 0.6456170678138733
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_07_operations.txt",
+          "score": 0.6215432286262512
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_02_team.txt",
+          "score": 0.6027998924255371
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_10_decision_log.txt",
+          "score": 0.5934982299804688
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 24.0,
+          "traversal_path": [
+            "Drift"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 21.83333333333333,
+          "traversal_path": [
+            "Drift Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 21.0,
+          "traversal_path": [
+            "Drift"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_02_team.txt",
+          "chunk_idx": 0,
+          "score": 20.333333333333332,
+          "traversal_path": [
+            "Drift"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 19.0,
+          "traversal_path": [
+            "Drift"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Drift Policy Service",
+        "Service",
+        "Drift"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/04_drift_03_architecture.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq023",
+      "type": "multi_hop",
+      "question": "Drift 3.4 の公開前に必要な Drift Catalog Service の負荷試験と Drift Policy Service のアクセス規則レビューは、それぞれ誰が担当しますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/04_drift_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/04_drift_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/04_drift_08_acceptance.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_03_architecture.txt",
+          "score": 0.7828991413116455
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_02_team.txt",
+          "score": 0.7039304971694946
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_10_decision_log.txt",
+          "score": 0.6695617437362671
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_04_release.txt",
+          "score": 0.6500484943389893
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_07_operations.txt",
+          "score": 0.6343901753425598
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 23.666666666666664,
+          "traversal_path": [
+            "Drift Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 19.833333333333332,
+          "traversal_path": [
+            "Drift Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_02_team.txt",
+          "chunk_idx": 0,
+          "score": 19.666666666666664,
+          "traversal_path": [
+            "Drift Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Drift Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Drift Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Drift Catalog Service",
+        "Drift Policy Service",
+        "Catalog Service",
+        "アクセス規則レビュー",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/04_drift_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/04_drift_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/04_drift_08_acceptance.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq024",
+      "type": "multi_hop",
+      "question": "Drift Gateway API の証明書更新障害では、誰が一次対応し、誰が技術調査を担当し、なぜ Drift Policy Service の臨時レビューが不要でしたか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/04_drift_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/04_drift_05_incident.txt",
+        "experiments/large_synthetic_corpus/docs/04_drift_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_03_architecture.txt",
+          "score": 0.7283635139465332
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_05_incident.txt",
+          "score": 0.7213749885559082
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_07_operations.txt",
+          "score": 0.6654291152954102
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_02_team.txt",
+          "score": 0.6625245809555054
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_07_operations.txt",
+          "score": 0.6416051983833313
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 22.166666666666664,
+          "traversal_path": [
+            "Drift Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 21.999999999999993,
+          "traversal_path": [
+            "Drift Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 21.0,
+          "traversal_path": [
+            "Drift Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Drift Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/04_drift_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Drift Gateway API"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Drift Policy Service",
+        "Drift Gateway API",
+        "Gateway API",
+        "Service",
+        "証明書更新"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq027",
+      "type": "relationship",
+      "question": "Ember Gateway API または Ember Catalog Service の技術問題は誰にエスカレーションしますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/05_ember_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+          "score": 0.6130712032318115
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_03_architecture.txt",
+          "score": 0.5994613170623779
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_09_integration.txt",
+          "score": 0.5608712434768677
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_07_operations.txt",
+          "score": 0.5345737934112549
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_10_decision_log.txt",
+          "score": 0.5337677597999573
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+          "chunk_idx": 0,
+          "score": 19.166666666666664,
+          "traversal_path": [
+            "Ember Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_09_integration.txt",
+          "chunk_idx": 0,
+          "score": 18.999999999999996,
+          "traversal_path": [
+            "Ember Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 18.666666666666664,
+          "traversal_path": [
+            "Ember Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 18.5,
+          "traversal_path": [
+            "Ember Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Ember Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Ember Catalog Service",
+        "Ember Gateway API",
+        "Catalog Service",
+        "Gateway API",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/05_ember_07_operations.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq028",
+      "type": "relationship",
+      "question": "Ember Policy Service の公開前レビュー責任者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/05_ember_03_architecture.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_03_architecture.txt",
+          "score": 0.6791492104530334
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+          "score": 0.6385337114334106
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+          "score": 0.5985451340675354
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_07_operations.txt",
+          "score": 0.590758740901947
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_06_governance.txt",
+          "score": 0.5877585411071777
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_09_integration.txt",
+          "chunk_idx": 0,
+          "score": 21.166666666666664,
+          "traversal_path": [
+            "Ember"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 20.5,
+          "traversal_path": [
+            "Ember"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 18.5,
+          "traversal_path": [
+            "Ember Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 17.166666666666664,
+          "traversal_path": [
+            "Ember Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+          "chunk_idx": 0,
+          "score": 16.666666666666664,
+          "traversal_path": [
+            "Ember Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Ember Policy Service",
+        "Service",
+        "Ember"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/05_ember_03_architecture.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq029",
+      "type": "multi_hop",
+      "question": "Ember 3.5 の公開前に必要な Ember Catalog Service の負荷試験と Ember Policy Service のアクセス規則レビューは、それぞれ誰が担当しますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/05_ember_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/05_ember_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/05_ember_08_acceptance.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_03_architecture.txt",
+          "score": 0.7454107403755188
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+          "score": 0.6548570394515991
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_04_release.txt",
+          "score": 0.617388129234314
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_10_decision_log.txt",
+          "score": 0.6164188981056213
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_08_acceptance.txt",
+          "score": 0.6018403768539429
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_09_integration.txt",
+          "chunk_idx": 0,
+          "score": 21.166666666666664,
+          "traversal_path": [
+            "Ember Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+          "chunk_idx": 0,
+          "score": 20.166666666666664,
+          "traversal_path": [
+            "Ember Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 19.666666666666664,
+          "traversal_path": [
+            "Ember Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_04_release.txt",
+          "chunk_idx": 0,
+          "score": 19.166666666666664,
+          "traversal_path": [
+            "Ember Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 18.5,
+          "traversal_path": [
+            "Ember Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Ember Catalog Service",
+        "Ember Policy Service",
+        "Catalog Service",
+        "アクセス規則レビュー",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/05_ember_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/05_ember_08_acceptance.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq030",
+      "type": "multi_hop",
+      "question": "Ember Gateway API の証明書更新障害では、誰が一次対応し、誰が技術調査を担当し、なぜ Ember Policy Service の臨時レビューが不要でしたか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/05_ember_05_incident.txt",
+        "experiments/large_synthetic_corpus/docs/05_ember_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_05_incident.txt",
+          "score": 0.6942950487136841
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_03_architecture.txt",
+          "score": 0.6853220462799072
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_07_operations.txt",
+          "score": 0.6588308811187744
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+          "score": 0.6218142509460449
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+          "score": 0.6155134439468384
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 22.333333333333332,
+          "traversal_path": [
+            "Ember Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_09_integration.txt",
+          "chunk_idx": 0,
+          "score": 19.5,
+          "traversal_path": [
+            "Ember Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.166666666666664,
+          "traversal_path": [
+            "Ember Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_02_team.txt",
+          "chunk_idx": 0,
+          "score": 17.333333333333332,
+          "traversal_path": [
+            "Ember Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/05_ember_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 16.333333333333332,
+          "traversal_path": [
+            "Ember Gateway API"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Ember Policy Service",
+        "Ember Gateway API",
+        "Gateway API",
+        "Service",
+        "証明書更新"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/05_ember_07_operations.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq033",
+      "type": "relationship",
+      "question": "Fjord Gateway API または Fjord Catalog Service の技術問題は誰にエスカレーションしますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/06_fjord_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/06_fjord_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_03_architecture.txt",
+          "score": 0.6391050815582275
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_02_team.txt",
+          "score": 0.6217101812362671
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_07_operations.txt",
+          "score": 0.5818405151367188
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_05_incident.txt",
+          "score": 0.5638958215713501
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_09_integration.txt",
+          "score": 0.5538207292556763
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 23.16666666666666,
+          "traversal_path": [
+            "Fjord Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 19.666666666666664,
+          "traversal_path": [
+            "Fjord Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.666666666666664,
+          "traversal_path": [
+            "Fjord Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.166666666666664,
+          "traversal_path": [
+            "Fjord Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 15.666666666666668,
+          "traversal_path": [
+            "Fjord Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Fjord Catalog Service",
+        "Fjord Gateway API",
+        "Catalog Service",
+        "Gateway API",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq034",
+      "type": "relationship",
+      "question": "Fjord Policy Service の公開前レビュー責任者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/06_fjord_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/06_fjord_03_architecture.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_03_architecture.txt",
+          "score": 0.6563953757286072
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_02_team.txt",
+          "score": 0.5996056795120239
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_02_team.txt",
+          "score": 0.56851726770401
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_07_operations.txt",
+          "score": 0.5358069539070129
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_10_decision_log.txt",
+          "score": 0.533905565738678
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 23.83333333333333,
+          "traversal_path": [
+            "Fjord Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 20.5,
+          "traversal_path": [
+            "Fjord"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_02_team.txt",
+          "chunk_idx": 0,
+          "score": 20.333333333333332,
+          "traversal_path": [
+            "Fjord"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 18.5,
+          "traversal_path": [
+            "Fjord Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 17.333333333333332,
+          "traversal_path": [
+            "Fjord Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Fjord Policy Service",
+        "Service",
+        "Fjord"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/06_fjord_03_architecture.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq035",
+      "type": "multi_hop",
+      "question": "Fjord 3.6 の公開前に必要な Fjord Catalog Service の負荷試験と Fjord Policy Service のアクセス規則レビューは、それぞれ誰が担当しますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/06_fjord_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/06_fjord_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/06_fjord_08_acceptance.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_03_architecture.txt",
+          "score": 0.7597770690917969
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_02_team.txt",
+          "score": 0.6733351945877075
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_04_release.txt",
+          "score": 0.6395523548126221
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_10_decision_log.txt",
+          "score": 0.6345033645629883
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_09_integration.txt",
+          "score": 0.6188230514526367
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 25.666666666666664,
+          "traversal_path": [
+            "Fjord Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 19.833333333333332,
+          "traversal_path": [
+            "Fjord Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_02_team.txt",
+          "chunk_idx": 0,
+          "score": 19.666666666666664,
+          "traversal_path": [
+            "Fjord Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.166666666666664,
+          "traversal_path": [
+            "Fjord Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 17.666666666666664,
+          "traversal_path": [
+            "Fjord Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Fjord Catalog Service",
+        "Fjord Policy Service",
+        "Catalog Service",
+        "アクセス規則レビュー",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/06_fjord_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/06_fjord_04_release.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq036",
+      "type": "multi_hop",
+      "question": "Fjord Gateway API の証明書更新障害では、誰が一次対応し、誰が技術調査を担当し、なぜ Fjord Policy Service の臨時レビューが不要でしたか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/06_fjord_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/06_fjord_05_incident.txt",
+        "experiments/large_synthetic_corpus/docs/06_fjord_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_03_architecture.txt",
+          "score": 0.7185494899749756
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_05_incident.txt",
+          "score": 0.712852954864502
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_02_team.txt",
+          "score": 0.630422055721283
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_07_operations.txt",
+          "score": 0.6267768144607544
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_07_operations.txt",
+          "score": 0.6263031959533691
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 23.999999999999993,
+          "traversal_path": [
+            "Fjord Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 21.5,
+          "traversal_path": [
+            "Fjord Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 19.333333333333332,
+          "traversal_path": [
+            "Fjord Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Fjord Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/06_fjord_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.166666666666664,
+          "traversal_path": [
+            "Fjord Gateway API"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Fjord Policy Service",
+        "Fjord Gateway API",
+        "Gateway API",
+        "Service",
+        "証明書更新"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/06_fjord_07_operations.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq039",
+      "type": "relationship",
+      "question": "Grove Gateway API または Grove Catalog Service の技術問題は誰にエスカレーションしますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/07_grove_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/07_grove_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_02_team.txt",
+          "score": 0.6481106877326965
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_03_architecture.txt",
+          "score": 0.6403666734695435
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_09_integration.txt",
+          "score": 0.5969555377960205
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_07_operations.txt",
+          "score": 0.5965480804443359
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_10_decision_log.txt",
+          "score": 0.5693211555480957
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 21.5,
+          "traversal_path": [
+            "Grove Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.666666666666664,
+          "traversal_path": [
+            "Grove Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 18.666666666666664,
+          "traversal_path": [
+            "Grove Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.166666666666664,
+          "traversal_path": [
+            "Grove Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 17.666666666666664,
+          "traversal_path": [
+            "Grove Gateway API"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Grove Catalog Service",
+        "Grove Gateway API",
+        "Catalog Service",
+        "Gateway API",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq040",
+      "type": "relationship",
+      "question": "Grove Policy Service の公開前レビュー責任者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/07_grove_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/07_grove_03_architecture.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_03_architecture.txt",
+          "score": 0.6975900530815125
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_02_team.txt",
+          "score": 0.6633163690567017
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_02_team.txt",
+          "score": 0.6265953183174133
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_10_decision_log.txt",
+          "score": 0.6215174198150635
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_07_operations.txt",
+          "score": 0.6126953363418579
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 21.833333333333332,
+          "traversal_path": [
+            "Grove"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 20.666666666666664,
+          "traversal_path": [
+            "Grove"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_02_team.txt",
+          "chunk_idx": 0,
+          "score": 20.333333333333332,
+          "traversal_path": [
+            "Grove"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 19.166666666666664,
+          "traversal_path": [
+            "Grove Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 17.666666666666664,
+          "traversal_path": [
+            "Grove Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Grove Policy Service",
+        "Service",
+        "Grove"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/07_grove_03_architecture.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq041",
+      "type": "multi_hop",
+      "question": "Grove 3.7 の公開前に必要な Grove Catalog Service の負荷試験と Grove Policy Service のアクセス規則レビューは、それぞれ誰が担当しますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/07_grove_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/07_grove_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/07_grove_08_acceptance.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_03_architecture.txt",
+          "score": 0.7685759663581848
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_02_team.txt",
+          "score": 0.6946172118186951
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_10_decision_log.txt",
+          "score": 0.6560798287391663
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_09_integration.txt",
+          "score": 0.6504073143005371
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_07_operations.txt",
+          "score": 0.6340576410293579
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 21.33333333333333,
+          "traversal_path": [
+            "Grove Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_02_team.txt",
+          "chunk_idx": 0,
+          "score": 19.666666666666664,
+          "traversal_path": [
+            "Grove Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 19.666666666666664,
+          "traversal_path": [
+            "Grove Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Grove Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 17.5,
+          "traversal_path": [
+            "Grove Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Grove Catalog Service",
+        "Grove Policy Service",
+        "Catalog Service",
+        "アクセス規則レビュー",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/07_grove_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/07_grove_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/07_grove_08_acceptance.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq042",
+      "type": "multi_hop",
+      "question": "Grove Gateway API の証明書更新障害では、誰が一次対応し、誰が技術調査を担当し、なぜ Grove Policy Service の臨時レビューが不要でしたか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/07_grove_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/07_grove_05_incident.txt",
+        "experiments/large_synthetic_corpus/docs/07_grove_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_03_architecture.txt",
+          "score": 0.7239257097244263
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_05_incident.txt",
+          "score": 0.7207720279693604
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_07_operations.txt",
+          "score": 0.6790518760681152
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_07_operations.txt",
+          "score": 0.664131760597229
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_02_team.txt",
+          "score": 0.6613132357597351
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 22.833333333333332,
+          "traversal_path": [
+            "Grove Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 21.166666666666664,
+          "traversal_path": [
+            "Grove Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Grove Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Grove Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/07_grove_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Grove Gateway API"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Grove Policy Service",
+        "Grove Gateway API",
+        "Gateway API",
+        "Service",
+        "証明書更新"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq045",
+      "type": "relationship",
+      "question": "Harbor Gateway API または Harbor Catalog Service の技術問題は誰にエスカレーションしますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/08_harbor_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/08_harbor_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_02_team.txt",
+          "score": 0.6442863941192627
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_03_architecture.txt",
+          "score": 0.6362181901931763
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_09_integration.txt",
+          "score": 0.6029151678085327
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_07_operations.txt",
+          "score": 0.5968935489654541
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_01_overview.txt",
+          "score": 0.5791898965835571
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 22.5,
+          "traversal_path": [
+            "Harbor Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 18.666666666666664,
+          "traversal_path": [
+            "Harbor Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 17.66666666666666,
+          "traversal_path": [
+            "Harbor Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_02_team.txt",
+          "chunk_idx": 0,
+          "score": 16.0,
+          "traversal_path": [
+            "Harbor Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 15.5,
+          "traversal_path": [
+            "Harbor Gateway API"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Harbor Catalog Service",
+        "Harbor Gateway API",
+        "Catalog Service",
+        "Gateway API",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq046",
+      "type": "relationship",
+      "question": "Harbor Policy Service の公開前レビュー責任者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/08_harbor_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/08_harbor_03_architecture.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_03_architecture.txt",
+          "score": 0.6276665329933167
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_02_team.txt",
+          "score": 0.5843657851219177
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_07_operations.txt",
+          "score": 0.561808705329895
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_05_incident.txt",
+          "score": 0.5350160598754883
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_06_governance.txt",
+          "score": 0.5291686058044434
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 23.0,
+          "traversal_path": [
+            "Harbor"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 19.0,
+          "traversal_path": [
+            "Harbor"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Harbor"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 18.166666666666664,
+          "traversal_path": [
+            "Harbor"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 17.166666666666664,
+          "traversal_path": [
+            "Harbor Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Harbor Policy Service",
+        "Service",
+        "Harbor"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/08_harbor_03_architecture.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq047",
+      "type": "multi_hop",
+      "question": "Harbor 3.8 の公開前に必要な Harbor Catalog Service の負荷試験と Harbor Policy Service のアクセス規則レビューは、それぞれ誰が担当しますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/08_harbor_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/08_harbor_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/08_harbor_08_acceptance.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_03_architecture.txt",
+          "score": 0.7364518642425537
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_02_team.txt",
+          "score": 0.6900538206100464
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_09_integration.txt",
+          "score": 0.662446141242981
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_10_decision_log.txt",
+          "score": 0.6578851342201233
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_04_release.txt",
+          "score": 0.657111644744873
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 22.833333333333332,
+          "traversal_path": [
+            "Harbor Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 18.833333333333332,
+          "traversal_path": [
+            "Harbor Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 18.83333333333333,
+          "traversal_path": [
+            "Harbor Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_02_team.txt",
+          "chunk_idx": 0,
+          "score": 17.166666666666664,
+          "traversal_path": [
+            "Harbor Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 16.166666666666668,
+          "traversal_path": [
+            "Harbor Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Harbor Catalog Service",
+        "Harbor Policy Service",
+        "Catalog Service",
+        "アクセス規則レビュー",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/08_harbor_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/08_harbor_04_release.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq048",
+      "type": "multi_hop",
+      "question": "Harbor Gateway API の証明書更新障害では、誰が一次対応し、誰が技術調査を担当し、なぜ Harbor Policy Service の臨時レビューが不要でしたか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/08_harbor_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/08_harbor_05_incident.txt",
+        "experiments/large_synthetic_corpus/docs/08_harbor_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_05_incident.txt",
+          "score": 0.7115497589111328
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_03_architecture.txt",
+          "score": 0.6997486352920532
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_07_operations.txt",
+          "score": 0.654330313205719
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_09_integration.txt",
+          "score": 0.6409502029418945
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_02_team.txt",
+          "score": 0.633159875869751
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 25.666666666666664,
+          "traversal_path": [
+            "Harbor"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 20.5,
+          "traversal_path": [
+            "Harbor"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_02_team.txt",
+          "chunk_idx": 0,
+          "score": 19.833333333333332,
+          "traversal_path": [
+            "Harbor"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 19.666666666666664,
+          "traversal_path": [
+            "Harbor"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/08_harbor_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.833333333333332,
+          "traversal_path": [
+            "Harbor"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Harbor Policy Service",
+        "Harbor Gateway API",
+        "Gateway API",
+        "Service",
+        "Harbor"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq051",
+      "type": "relationship",
+      "question": "Indigo Gateway API または Indigo Catalog Service の技術問題は誰にエスカレーションしますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/09_indigo_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/09_indigo_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_02_team.txt",
+          "score": 0.6477093696594238
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_03_architecture.txt",
+          "score": 0.6471698880195618
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_07_operations.txt",
+          "score": 0.6152585744857788
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_09_integration.txt",
+          "score": 0.6078954339027405
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_05_incident.txt",
+          "score": 0.571700930595398
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.666666666666664,
+          "traversal_path": [
+            "Indigo Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 18.5,
+          "traversal_path": [
+            "Indigo Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.166666666666664,
+          "traversal_path": [
+            "Indigo Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 17.666666666666664,
+          "traversal_path": [
+            "Indigo Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 16.166666666666664,
+          "traversal_path": [
+            "Indigo Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Indigo Catalog Service",
+        "Indigo Gateway API",
+        "Catalog Service",
+        "Gateway API",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq052",
+      "type": "relationship",
+      "question": "Indigo Policy Service の公開前レビュー責任者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/09_indigo_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/09_indigo_03_architecture.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_03_architecture.txt",
+          "score": 0.6471370458602905
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_02_team.txt",
+          "score": 0.6229697465896606
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_02_team.txt",
+          "score": 0.6091801524162292
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_05_incident.txt",
+          "score": 0.5662195086479187
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_10_decision_log.txt",
+          "score": 0.5616157054901123
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 24.0,
+          "traversal_path": [
+            "Indigo"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_02_team.txt",
+          "chunk_idx": 0,
+          "score": 20.5,
+          "traversal_path": [
+            "Indigo"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 19.833333333333332,
+          "traversal_path": [
+            "Indigo"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 19.333333333333336,
+          "traversal_path": [
+            "Indigo"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 17.5,
+          "traversal_path": [
+            "Indigo Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Indigo Policy Service",
+        "Service",
+        "Indigo"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/09_indigo_03_architecture.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq053",
+      "type": "multi_hop",
+      "question": "Indigo 3.9 の公開前に必要な Indigo Catalog Service の負荷試験と Indigo Policy Service のアクセス規則レビューは、それぞれ誰が担当しますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/09_indigo_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/09_indigo_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/09_indigo_08_acceptance.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_03_architecture.txt",
+          "score": 0.7193770408630371
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_02_team.txt",
+          "score": 0.6607867479324341
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_04_release.txt",
+          "score": 0.6275362968444824
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_09_integration.txt",
+          "score": 0.6238588094711304
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_10_decision_log.txt",
+          "score": 0.6233167052268982
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_02_team.txt",
+          "chunk_idx": 0,
+          "score": 19.833333333333332,
+          "traversal_path": [
+            "Indigo Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 19.333333333333332,
+          "traversal_path": [
+            "Indigo Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 18.833333333333336,
+          "traversal_path": [
+            "Indigo Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 18.833333333333332,
+          "traversal_path": [
+            "Indigo Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Indigo Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Indigo Catalog Service",
+        "Indigo Policy Service",
+        "Catalog Service",
+        "アクセス規則レビュー",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/09_indigo_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/09_indigo_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/09_indigo_08_acceptance.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq054",
+      "type": "multi_hop",
+      "question": "Indigo Gateway API の証明書更新障害では、誰が一次対応し、誰が技術調査を担当し、なぜ Indigo Policy Service の臨時レビューが不要でしたか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/09_indigo_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/09_indigo_05_incident.txt",
+        "experiments/large_synthetic_corpus/docs/09_indigo_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_05_incident.txt",
+          "score": 0.6975343823432922
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_03_architecture.txt",
+          "score": 0.6894689202308655
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_07_operations.txt",
+          "score": 0.6387397050857544
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_07_operations.txt",
+          "score": 0.6382403373718262
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_02_team.txt",
+          "score": 0.6227990388870239
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 25.5,
+          "traversal_path": [
+            "Indigo"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 22.333333333333332,
+          "traversal_path": [
+            "Indigo"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_02_team.txt",
+          "chunk_idx": 0,
+          "score": 22.0,
+          "traversal_path": [
+            "Indigo"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_07_operations.txt",
+          "chunk_idx": 0,
+          "score": 21.333333333333332,
+          "traversal_path": [
+            "Indigo"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/09_indigo_06_governance.txt",
+          "chunk_idx": 0,
+          "score": 18.0,
+          "traversal_path": [
+            "Indigo Gateway API"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Indigo Policy Service",
+        "Indigo Gateway API",
+        "Gateway API",
+        "Service",
+        "Indigo"
+      ],
+      "required_documents_missed_by_graph": [],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": null,
+      "classification_rationale": null,
+      "benchmark_note": null
+    },
+    {
+      "id": "lq057",
+      "type": "relationship",
+      "question": "Juniper Gateway API または Juniper Catalog Service の技術問題は誰にエスカレーションしますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/10_juniper_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/10_juniper_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_02_team.txt",
+          "score": 0.6440759897232056
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_03_architecture.txt",
+          "score": 0.5946274995803833
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_09_integration.txt",
+          "score": 0.5939367413520813
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_07_operations.txt",
+          "score": 0.591728925704956
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_10_decision_log.txt",
+          "score": 0.5843616724014282
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 18.666666666666664,
+          "traversal_path": [
+            "Juniper Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 18.166666666666664,
+          "traversal_path": [
+            "Juniper Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 16.5,
+          "traversal_path": [
+            "Juniper Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_02_team.txt",
+          "chunk_idx": 0,
+          "score": 15.666666666666664,
+          "traversal_path": [
+            "Juniper Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_09_integration.txt",
+          "chunk_idx": 0,
+          "score": 14.666666666666666,
+          "traversal_path": [
+            "Juniper Catalog Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Juniper Catalog Service",
+        "Juniper Gateway API",
+        "Catalog Service",
+        "Gateway API",
+        "og Service"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/10_juniper_07_operations.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq058",
+      "type": "relationship",
+      "question": "Juniper Policy Service の公開前レビュー責任者は誰ですか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/10_juniper_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/10_juniper_03_architecture.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_03_architecture.txt",
+          "score": 0.6572468876838684
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_02_team.txt",
+          "score": 0.6421178579330444
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_07_operations.txt",
+          "score": 0.6123820543289185
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_06_governance.txt",
+          "score": 0.59707111120224
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_02_team.txt",
+          "score": 0.5936316251754761
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 20.5,
+          "traversal_path": [
+            "Juniper"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.833333333333332,
+          "traversal_path": [
+            "Juniper"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 17.5,
+          "traversal_path": [
+            "Juniper Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 17.0,
+          "traversal_path": [
+            "Juniper Policy Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 16.833333333333332,
+          "traversal_path": [
+            "Juniper Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Juniper Policy Service",
+        "Service",
+        "Juniper"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/10_juniper_03_architecture.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq059",
+      "type": "multi_hop",
+      "question": "Juniper 3.10 の公開前に必要な Juniper Catalog Service の負荷試験と Juniper Policy Service のアクセス規則レビューは、それぞれ誰が担当しますか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/10_juniper_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/10_juniper_04_release.txt",
+        "experiments/large_synthetic_corpus/docs/10_juniper_08_acceptance.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_03_architecture.txt",
+          "score": 0.7393719553947449
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_02_team.txt",
+          "score": 0.6688286066055298
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_04_release.txt",
+          "score": 0.6418620944023132
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_10_decision_log.txt",
+          "score": 0.6357524991035461
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_09_integration.txt",
+          "score": 0.6353604793548584
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 24.333333333333332,
+          "traversal_path": [
+            "Juniper 3.10"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 20.5,
+          "traversal_path": [
+            "Juniper 3.10"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.833333333333332,
+          "traversal_path": [
+            "Juniper Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 18.333333333333332,
+          "traversal_path": [
+            "Juniper Catalog Service"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 17.0,
+          "traversal_path": [
+            "Juniper Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Juniper Catalog Service",
+        "Juniper Policy Service",
+        "Catalog Service",
+        "Juniper 3.10",
+        "アクセス規則レビュー"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/10_juniper_03_architecture.txt",
+        "experiments/large_synthetic_corpus/docs/10_juniper_04_release.txt"
+      ],
+      "vector_retrieves_all_required_evidence": false,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    },
+    {
+      "id": "lq060",
+      "type": "multi_hop",
+      "question": "Juniper Gateway API の証明書更新障害では、誰が一次対応し、誰が技術調査を担当し、なぜ Juniper Policy Service の臨時レビューが不要でしたか？",
+      "required_relevant_documents": [
+        "experiments/large_synthetic_corpus/docs/10_juniper_02_team.txt",
+        "experiments/large_synthetic_corpus/docs/10_juniper_05_incident.txt",
+        "experiments/large_synthetic_corpus/docs/10_juniper_07_operations.txt"
+      ],
+      "vector_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_05_incident.txt",
+          "score": 0.70308917760849
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_03_architecture.txt",
+          "score": 0.6865427494049072
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_07_operations.txt",
+          "score": 0.6617631316184998
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_07_operations.txt",
+          "score": 0.6497511863708496
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_02_team.txt",
+          "score": 0.6267319917678833
+        }
+      ],
+      "graph_top_5": [
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_01_overview.txt",
+          "chunk_idx": 0,
+          "score": 22.0,
+          "traversal_path": [
+            "Juniper"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_05_incident.txt",
+          "chunk_idx": 0,
+          "score": 19.666666666666664,
+          "traversal_path": [
+            "Juniper Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_08_acceptance.txt",
+          "chunk_idx": 0,
+          "score": 19.0,
+          "traversal_path": [
+            "Juniper Gateway API"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_02_team.txt",
+          "chunk_idx": 0,
+          "score": 18.833333333333332,
+          "traversal_path": [
+            "Juniper"
+          ]
+        },
+        {
+          "document": "experiments/large_synthetic_corpus/docs/10_juniper_10_decision_log.txt",
+          "chunk_idx": 0,
+          "score": 16.833333333333332,
+          "traversal_path": [
+            "Juniper Policy Service"
+          ]
+        }
+      ],
+      "seed_entities": [
+        "Juniper Policy Service",
+        "Juniper Gateway API",
+        "Gateway API",
+        "Service",
+        "Juniper"
+      ],
+      "required_documents_missed_by_graph": [
+        "experiments/large_synthetic_corpus/docs/10_juniper_07_operations.txt"
+      ],
+      "vector_retrieves_all_required_evidence": true,
+      "failure_category": "5. traversal/ranking failure",
+      "classification_rationale": "At least one missed required document has a chunk reference on a node reached within the configured depth, but it was not returned in the top-5.",
+      "benchmark_note": null
+    }
+  ]
+}

@@ -32,6 +32,24 @@ def main() -> None:
         "Frozen Graph auto v2; depth=2, maximum seed entities=5, top-k=5. This report does not modify retrieval, parameters, or the dataset.",
         "",
     ]
+    failures = [record for record in analysis["records"] if record["failure_category"]]
+    vector_complete_multi_hop = [
+        record["id"]
+        for record in analysis["records"]
+        if record["type"] == "multi_hop" and record["vector_retrieves_all_required_evidence"]
+    ]
+    lines.extend(
+        [
+            f"Graph failures: {len(failures)}. " + ", ".join(
+                f"{category}: {sum(record['failure_category'] == category for record in failures)}"
+                for category in sorted({record["failure_category"] for record in failures})
+            ),
+            "",
+            "Multi-hop questions where Vector retrieved every required document without graph traversal: "
+            + (", ".join(vector_complete_multi_hop) or "none"),
+            "",
+        ]
+    )
     for record in analysis["records"]:
         lines.extend(
             [
@@ -43,6 +61,7 @@ def main() -> None:
                 f"- Graph top-5 documents: {document_list(record['graph_top_5'], include_path=True)}",
                 f"- Detected seed entities: {', '.join(record['seed_entities']) or 'なし'}",
                 f"- Required documents missed by Graph: {', '.join(f'`{item}`' for item in record['required_documents_missed_by_graph']) or 'なし'}",
+                f"- Vector retrieves all required evidence: {'yes' if record['vector_retrieves_all_required_evidence'] else 'no'}",
                 f"- Graph failure category: {record['failure_category'] or 'なし（必要文書をすべて取得）'}",
             ]
         )
