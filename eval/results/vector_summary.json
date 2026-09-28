@@ -1,0 +1,42 @@
+{
+  "system": "vector",
+  "dataset_path": "eval/dataset.jsonl",
+  "dataset_question_count": 24,
+  "relevance_unit": "document_id",
+  "top_k": 5,
+  "corpus_sha256": "fb8ebb8cd2cfa4fd8615331ff2582f3e8a488aad334970ec6c7644fd5c5e5aae",
+  "aggregate": {
+    "Recall@1": 0.5555555555555556,
+    "Recall@3": 0.875,
+    "Recall@5": 0.9583333333333334,
+    "MRR": 0.8263888888888888,
+    "mean_latency_ms": 158.44302612500007,
+    "question_count": 24
+  },
+  "by_type": {
+    "factual": {
+      "Recall@1": 0.75,
+      "Recall@3": 1.0,
+      "Recall@5": 1.0,
+      "MRR": 0.875,
+      "mean_latency_ms": 232.19007812500007,
+      "question_count": 8
+    },
+    "multi_hop": {
+      "Recall@1": 0.6041666666666666,
+      "Recall@3": 0.875,
+      "Recall@5": 1.0,
+      "MRR": 0.90625,
+      "mean_latency_ms": 125.2904585000001,
+      "question_count": 8
+    },
+    "relationship": {
+      "Recall@1": 0.3125,
+      "Recall@3": 0.75,
+      "Recall@5": 0.875,
+      "MRR": 0.6979166666666666,
+      "mean_latency_ms": 117.84854175000004,
+      "question_count": 8
+    }
+  }
+}
