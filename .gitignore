@@ -12,6 +12,11 @@ chroma_db/
 # レビューメモ（手元のみ）
 NOTES.md
 
+# 実験の生データ・抽出キャッシュ（本文や機微情報を含み得るため手元で保管）
+eval/results/*_raw.json
+eval/results/extraction_cache/
+eval/results/run_logs/
+
 # Claude Code のローカル設定
 .claude/settings.local.json
 

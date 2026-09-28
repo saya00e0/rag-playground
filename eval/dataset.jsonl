@@ -1,0 +1,24 @@
+{"id":"q001","question":"Atlas のプログラム責任者は誰ですか？","type":"factual","relevant_docs":["docs/benchmark_01_program_overview.txt"],"evidence":"概要文書で佐藤真央をプログラム責任者と明記。"}
+{"id":"q002","question":"Orion 2.1 の公開予定日はいつですか？","type":"factual","relevant_docs":["docs/benchmark_04_release_plan.txt"],"evidence":"リリース計画に2026年7月15日と明記。"}
+{"id":"q003","question":"検索候補を生成するコンポーネントは何ですか？","type":"factual","relevant_docs":["docs/benchmark_01_program_overview.txt","docs/benchmark_03_architecture.txt"],"evidence":"概要とアーキテクチャの両方で Vector Index の役割を記載。"}
+{"id":"q004","question":"定期メンテナンスはいつですか？","type":"factual","relevant_docs":["docs/benchmark_07_operations.txt"],"evidence":"運用手順に毎月第2日曜日の午前1時から3時までと明記。"}
+{"id":"q005","question":"受入試験の平均検索応答時間の合格条件は何秒以下ですか？","type":"factual","relevant_docs":["docs/benchmark_08_acceptance_criteria.txt"],"evidence":"受入条件に2秒以下と明記。"}
+{"id":"q006","question":"Gateway API の証明書更新失敗が起きたのはいつですか？","type":"factual","relevant_docs":["docs/benchmark_05_incident_report.txt"],"evidence":"障害報告に2026年6月3日と明記。"}
+{"id":"q007","question":"公開規則が未設定の文書はどう扱いますか？","type":"factual","relevant_docs":["docs/benchmark_06_governance.txt"],"evidence":"ガバナンス文書に公開してはならないと明記。"}
+{"id":"q008","question":"Atlas の最初の対象業務は何ですか？","type":"factual","relevant_docs":["docs/benchmark_01_program_overview.txt"],"evidence":"概要文書に調達部の製品仕様書検索と明記。"}
+{"id":"q009","question":"アクセス規則に問題が見つかった場合、最終的に公開可否を判断するのは誰ですか？","type":"relationship","relevant_docs":["docs/benchmark_06_governance.txt"],"evidence":"鈴木梨奈が佐藤真央へ報告し、佐藤真央が最終判断する関係を記載。"}
+{"id":"q010","question":"Catalog Service の設計責任者は誰ですか？","type":"relationship","relevant_docs":["docs/benchmark_03_architecture.txt","docs/benchmark_02_team_roles.txt"],"evidence":"アーキテクチャと担当者一覧で田中健との関係を記載。"}
+{"id":"q011","question":"Policy Service の公開前レビュー責任者は誰ですか？","type":"relationship","relevant_docs":["docs/benchmark_03_architecture.txt","docs/benchmark_02_team_roles.txt"],"evidence":"両文書で鈴木梨奈との関係を記載。"}
+{"id":"q012","question":"検索失敗の一次対応を担当するのは誰ですか？","type":"relationship","relevant_docs":["docs/benchmark_07_operations.txt","docs/benchmark_02_team_roles.txt"],"evidence":"運用手順と担当者一覧で高橋悠を記載。"}
+{"id":"q013","question":"調達部で製品仕様書の更新確認を担当するのは誰ですか？","type":"relationship","relevant_docs":["docs/benchmark_02_team_roles.txt","docs/benchmark_06_governance.txt"],"evidence":"担当者一覧とガバナンス文書で伊藤彩を記載。"}
+{"id":"q014","question":"Gateway API または Catalog Service の技術問題は誰にエスカレーションしますか？","type":"relationship","relevant_docs":["docs/benchmark_07_operations.txt","docs/benchmark_02_team_roles.txt"],"evidence":"運用手順と担当者一覧で田中健を技術エスカレーション先と記載。"}
+{"id":"q015","question":"アクセス規則に関するエスカレーション先は誰ですか？","type":"relationship","relevant_docs":["docs/benchmark_07_operations.txt","docs/benchmark_02_team_roles.txt"],"evidence":"運用手順と担当者一覧で鈴木梨奈を記載。"}
+{"id":"q016","question":"公開延期の連絡を調達部の窓口へ行うのは誰ですか？","type":"relationship","relevant_docs":["docs/benchmark_04_release_plan.txt","docs/benchmark_02_team_roles.txt"],"evidence":"リリース計画で佐藤真央、担当者一覧で窓口が伊藤彩と記載。"}
+{"id":"q017","question":"Orion 2.1 の公開前に完了が必要な三つの確認は何ですか？","type":"multi_hop","relevant_docs":["docs/benchmark_04_release_plan.txt"],"evidence":"リリース計画に負荷試験、アクセス規則レビュー、仕様書サンプル確認を列挙。"}
+{"id":"q018","question":"未設定の公開規則を持つ文書が検索結果に返らないようにするコンポーネントは何ですか？","type":"multi_hop","relevant_docs":["docs/benchmark_03_architecture.txt","docs/benchmark_06_governance.txt","docs/benchmark_08_acceptance_criteria.txt"],"evidence":"候補検索、規則判定、受入条件を跨いで Policy Service の役割を確認できる。"}
+{"id":"q019","question":"Gateway API の証明書障害では、誰が一次対応し、誰が技術調査を担当しましたか？","type":"multi_hop","relevant_docs":["docs/benchmark_05_incident_report.txt","docs/benchmark_02_team_roles.txt"],"evidence":"障害報告で高橋悠から田中健への流れ、担当者一覧で役割を確認できる。"}
+{"id":"q020","question":"公開判定前日に未解決の高優先度障害がある場合、公開と調達部連絡はどうなりますか？","type":"multi_hop","relevant_docs":["docs/benchmark_04_release_plan.txt"],"evidence":"リリース計画に延期と佐藤真央から伊藤彩への連絡を記載。"}
+{"id":"q021","question":"平均応答時間が2秒を超える状態が15分続いた場合、誰が何として記録しますか？","type":"multi_hop","relevant_docs":["docs/benchmark_07_operations.txt","docs/benchmark_02_team_roles.txt"],"evidence":"運用手順の性能障害条件と担当者一覧の高橋悠の役割を組み合わせる。"}
+{"id":"q022","question":"Vector Index が公開可否を判断しないため、アクセス規則の変更はどこへ反映しますか？","type":"multi_hop","relevant_docs":["docs/benchmark_03_architecture.txt"],"evidence":"アーキテクチャ文書に Policy Service へ反映すると明記。"}
+{"id":"q023","question":"Orion 2.1 の公開可否を佐藤真央が判断する前に、田中健と鈴木梨奈はそれぞれ何の結果を提出しますか？","type":"multi_hop","relevant_docs":["docs/benchmark_08_acceptance_criteria.txt","docs/benchmark_04_release_plan.txt"],"evidence":"受入条件の提出物とリリース計画の公開判断手順を組み合わせる。"}
+{"id":"q024","question":"2026年6月の障害で Policy Service のレビューが不要だった理由は何ですか？","type":"multi_hop","relevant_docs":["docs/benchmark_05_incident_report.txt"],"evidence":"障害報告にアクセス規則の変更がなかったためと明記。"}
