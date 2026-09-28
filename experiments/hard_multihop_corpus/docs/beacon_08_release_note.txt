@@ -1,0 +1,4 @@
+架空の hard-multihop 評価資料 — Beacon
+実在の組織、人物、顧客、認証情報は含まれません。
+
+Beacon の次回リリースは監視表示の改善を含みます。Lighthouse のしきい値、Beacon Bridge の担当、例外承認の規則はリリースノートでは変更しません。

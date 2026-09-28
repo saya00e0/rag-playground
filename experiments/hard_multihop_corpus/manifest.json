@@ -1,0 +1,130 @@
+[
+  {
+    "program": "Atlas",
+    "path": "docs/atlas_01_signal_registry.txt"
+  },
+  {
+    "program": "Atlas",
+    "path": "docs/atlas_02_signal_routing.txt"
+  },
+  {
+    "program": "Atlas",
+    "path": "docs/atlas_03_service_ownership.txt"
+  },
+  {
+    "program": "Atlas",
+    "path": "docs/atlas_04_exception_register.txt"
+  },
+  {
+    "program": "Atlas",
+    "path": "docs/atlas_05_error_catalog.txt"
+  },
+  {
+    "program": "Atlas",
+    "path": "docs/atlas_06_change_note.txt"
+  },
+  {
+    "program": "Atlas",
+    "path": "docs/atlas_07_similar_terms.txt"
+  },
+  {
+    "program": "Atlas",
+    "path": "docs/atlas_08_release_note.txt"
+  },
+  {
+    "program": "Beacon",
+    "path": "docs/beacon_01_signal_registry.txt"
+  },
+  {
+    "program": "Beacon",
+    "path": "docs/beacon_02_signal_routing.txt"
+  },
+  {
+    "program": "Beacon",
+    "path": "docs/beacon_03_service_ownership.txt"
+  },
+  {
+    "program": "Beacon",
+    "path": "docs/beacon_04_exception_register.txt"
+  },
+  {
+    "program": "Beacon",
+    "path": "docs/beacon_05_error_catalog.txt"
+  },
+  {
+    "program": "Beacon",
+    "path": "docs/beacon_06_change_note.txt"
+  },
+  {
+    "program": "Beacon",
+    "path": "docs/beacon_07_similar_terms.txt"
+  },
+  {
+    "program": "Beacon",
+    "path": "docs/beacon_08_release_note.txt"
+  },
+  {
+    "program": "Comet",
+    "path": "docs/comet_01_signal_registry.txt"
+  },
+  {
+    "program": "Comet",
+    "path": "docs/comet_02_signal_routing.txt"
+  },
+  {
+    "program": "Comet",
+    "path": "docs/comet_03_service_ownership.txt"
+  },
+  {
+    "program": "Comet",
+    "path": "docs/comet_04_exception_register.txt"
+  },
+  {
+    "program": "Comet",
+    "path": "docs/comet_05_error_catalog.txt"
+  },
+  {
+    "program": "Comet",
+    "path": "docs/comet_06_change_note.txt"
+  },
+  {
+    "program": "Comet",
+    "path": "docs/comet_07_similar_terms.txt"
+  },
+  {
+    "program": "Comet",
+    "path": "docs/comet_08_release_note.txt"
+  },
+  {
+    "program": "Delta",
+    "path": "docs/delta_01_signal_registry.txt"
+  },
+  {
+    "program": "Delta",
+    "path": "docs/delta_02_signal_routing.txt"
+  },
+  {
+    "program": "Delta",
+    "path": "docs/delta_03_service_ownership.txt"
+  },
+  {
+    "program": "Delta",
+    "path": "docs/delta_04_exception_register.txt"
+  },
+  {
+    "program": "Delta",
+    "path": "docs/delta_05_error_catalog.txt"
+  },
+  {
+    "program": "Delta",
+    "path": "docs/delta_06_change_note.txt"
+  },
+  {
+    "program": "Delta",
+    "path": "docs/delta_07_similar_terms.txt"
+  },
+  {
+    "program": "Delta",
+    "path": "docs/delta_08_release_note.txt"
+  }
+]
