@@ -16,6 +16,8 @@ NOTES.md
 eval/results/*_raw.json
 eval/results/extraction_cache/
 eval/results/run_logs/
+eval/results/graph.json
+eval/results/graph_summary.json
 
 # Claude Code のローカル設定
 .claude/settings.local.json
