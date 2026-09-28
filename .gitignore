@@ -8,6 +8,9 @@ __pycache__/
 
 # Chroma の永続データ（ingest.py で再生成できる）
 chroma_db/
+experiments/large_synthetic_corpus/chroma_db/
+experiments/large_synthetic_corpus/results/*_raw.json
+experiments/large_synthetic_corpus/extraction_cache/
 
 # レビューメモ（手元のみ）
 NOTES.md

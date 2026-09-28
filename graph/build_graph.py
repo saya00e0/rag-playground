@@ -79,11 +79,13 @@ def main() -> None:
     parser.add_argument("--max-chunks", type=int, default=10)
     parser.add_argument("--cache-dir", default="eval/results/extraction_cache")
     parser.add_argument("--graph-path", default="eval/results/graph.json")
+    parser.add_argument("--chroma-path", default="./chroma_db")
+    parser.add_argument("--collection", default="documents")
     args = parser.parse_args()
     if args.max_chunks < 1:
         parser.error("--max-chunks must be positive")
 
-    collection = chromadb.PersistentClient(path="./chroma_db").get_collection("documents")
+    collection = chromadb.PersistentClient(path=args.chroma_path).get_collection(args.collection)
     records = collection.get(include=["documents", "metadatas"])
     chunks = sorted(
         zip(records["documents"], records["metadatas"]),
