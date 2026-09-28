@@ -15,6 +15,7 @@ NOTES.md
 # 実験の生データ・抽出キャッシュ（本文や機微情報を含み得るため手元で保管）
 eval/results/*_raw.json
 eval/results/extraction_cache/
+eval/results/semantic_seed_cache/
 eval/results/run_logs/
 eval/results/graph*.json
 

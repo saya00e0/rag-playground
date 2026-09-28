@@ -1,0 +1,47 @@
+{
+  "system": "graph",
+  "variant": "semantic_seed_v1",
+  "seed_method": "top-5 embedding similarity over frozen graph node names",
+  "embedding_model": "text-embedding-3-small",
+  "graph_path": "eval/results/graph_v2.json",
+  "dataset_path": "eval/dataset.jsonl",
+  "dataset_question_count": 24,
+  "relevance_unit": "document_id",
+  "top_k": 5,
+  "depth": 2,
+  "max_entities": 5,
+  "aggregate": {
+    "Recall@1": 0.2708333333333333,
+    "Recall@3": 0.5208333333333334,
+    "Recall@5": 0.6666666666666666,
+    "MRR": 0.5326388888888889,
+    "mean_latency_ms": 218.69594270833338,
+    "question_count": 24
+  },
+  "by_type": {
+    "factual": {
+      "Recall@1": 0.375,
+      "Recall@3": 0.6875,
+      "Recall@5": 0.6875,
+      "MRR": 0.5416666666666666,
+      "mean_latency_ms": 277.2211876249999,
+      "question_count": 8
+    },
+    "multi_hop": {
+      "Recall@1": 0.25,
+      "Recall@3": 0.5625,
+      "Recall@5": 0.625,
+      "MRR": 0.5208333333333334,
+      "mean_latency_ms": 201.71597925000006,
+      "question_count": 8
+    },
+    "relationship": {
+      "Recall@1": 0.1875,
+      "Recall@3": 0.3125,
+      "Recall@5": 0.6875,
+      "MRR": 0.5354166666666667,
+      "mean_latency_ms": 177.15066125000013,
+      "question_count": 8
+    }
+  }
+}

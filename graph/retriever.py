@@ -38,6 +38,13 @@ class GraphRetriever:
         if depth < 0 or max_entities < 1 or max_chunks < 1:
             raise ValueError("depth, max_entities, and max_chunks must be positive")
         seeds = self.seed_entities(question, max_entities)
+        return self.retrieve_from_seeds(seeds, depth=depth, max_entities=max_entities, max_chunks=max_chunks)
+
+    def retrieve_from_seeds(self, seeds: list[str], depth: int = 2, max_entities: int = 5, max_chunks: int = 5) -> list[GraphRetrievedChunk]:
+        """Traverse from supplied node IDs using the baseline ranking behavior."""
+        if depth < 0 or max_entities < 1 or max_chunks < 1:
+            raise ValueError("depth, max_entities, and max_chunks must be positive")
+        seeds = seeds[:max_entities]
         distances: dict[str, int] = {seed: 0 for seed in seeds}
         queue = deque(seeds)
         while queue:

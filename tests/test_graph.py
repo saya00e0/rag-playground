@@ -4,6 +4,7 @@ from graph.builder import ChunkRef, GraphBuilder, graph_statistics
 from graph.curation import apply_curation
 from graph.extractor import Extraction, Entity, Relation, normalize_entity, parse_extraction
 from graph.retriever import GraphRetriever
+from graph.semantic_seed import SemanticSeedMatcher
 
 
 class ExtractorTests(unittest.TestCase):
@@ -67,6 +68,10 @@ class GraphTests(unittest.TestCase):
         self.assertEqual(self.graph["edges"][0]["source"], "田中健")
         self.assertEqual(curated["edges"][0]["source"], "catalog service")
         self.assertEqual(len(log["operations"]), 1)
+
+    def test_semantic_matcher_orders_by_cosine_similarity(self):
+        matcher = SemanticSeedMatcher(["a", "b"], ["A", "B"], [[1.0, 0.0], [0.0, 1.0]])
+        self.assertEqual(matcher.match([0.9, 0.1], 1)[0][0], "a")
 
 
 if __name__ == "__main__":
