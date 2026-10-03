@@ -1,0 +1,44 @@
+{
+  "system": "vector",
+  "dataset_path": "experiments/entity_chain_corpus/eval/dataset.jsonl",
+  "dataset_question_count": 12,
+  "relevance_unit": "document_id",
+  "top_k": 5,
+  "embedding_model": "text-embedding-3-small",
+  "chunk_count": 12,
+  "corpus_sha256": "28c7ceed8913efed79833ba6bbb24ff4865316f4eecb054137681be14dfdf572",
+  "aggregate": {
+    "Recall@1": 0.6944444444444445,
+    "Recall@3": 0.8333333333333334,
+    "Recall@5": 0.8888888888888888,
+    "MRR": 0.875,
+    "mean_latency_ms": 247.399545083333,
+    "question_count": 12
+  },
+  "by_type": {
+    "factual": {
+      "Recall@1": 1.0,
+      "Recall@3": 1.0,
+      "Recall@5": 1.0,
+      "MRR": 1.0,
+      "mean_latency_ms": 157.33890599999967,
+      "question_count": 4
+    },
+    "multi_hop": {
+      "Recall@1": 0.08333333333333333,
+      "Recall@3": 0.5,
+      "Recall@5": 0.6666666666666666,
+      "MRR": 0.625,
+      "mean_latency_ms": 388.3141977499998,
+      "question_count": 4
+    },
+    "relationship": {
+      "Recall@1": 1.0,
+      "Recall@3": 1.0,
+      "Recall@5": 1.0,
+      "MRR": 1.0,
+      "mean_latency_ms": 196.54553149999953,
+      "question_count": 4
+    }
+  }
+}

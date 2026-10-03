@@ -16,6 +16,10 @@ experiments/hard_multihop_corpus/chroma_db/
 experiments/hard_multihop_corpus/results/*_raw.json
 experiments/hard_multihop_corpus/results/graph_auto_v2.json
 experiments/hard_multihop_corpus/extraction_cache/
+experiments/entity_chain_corpus/chroma_db/
+experiments/entity_chain_corpus/results/*_raw.json
+experiments/entity_chain_corpus/results/graph_auto_v2.json
+experiments/entity_chain_corpus/extraction_cache/
 
 # レビューメモ（手元のみ）
 NOTES.md
