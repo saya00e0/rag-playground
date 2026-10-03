@@ -1,0 +1,50 @@
+[
+  {
+    "chain": "chain01",
+    "path": "docs/chain01_01_researcher.txt"
+  },
+  {
+    "chain": "chain01",
+    "path": "docs/chain01_02_partnership.txt"
+  },
+  {
+    "chain": "chain01",
+    "path": "docs/chain01_03_product.txt"
+  },
+  {
+    "chain": "chain02",
+    "path": "docs/chain02_01_researcher.txt"
+  },
+  {
+    "chain": "chain02",
+    "path": "docs/chain02_02_partnership.txt"
+  },
+  {
+    "chain": "chain02",
+    "path": "docs/chain02_03_product.txt"
+  },
+  {
+    "chain": "chain03",
+    "path": "docs/chain03_01_researcher.txt"
+  },
+  {
+    "chain": "chain03",
+    "path": "docs/chain03_02_partnership.txt"
+  },
+  {
+    "chain": "chain03",
+    "path": "docs/chain03_03_product.txt"
+  },
+  {
+    "chain": "chain04",
+    "path": "docs/chain04_01_researcher.txt"
+  },
+  {
+    "chain": "chain04",
+    "path": "docs/chain04_02_partnership.txt"
+  },
+  {
+    "chain": "chain04",
+    "path": "docs/chain04_03_product.txt"
+  }
+]
