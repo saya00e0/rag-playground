@@ -182,3 +182,17 @@ Changing the embedding model changes the vector dimensionality, which ChromaDB w
 - `ingest.py` embeds all of a file's chunks in a single API call, which will hit request limits on very large documents.
 - Chunks of 50 characters or fewer are dropped, so a file consisting only of short lines yields nothing to embed and causes the embedding call to fail on an empty input.
 - The Tailwind CDN is loaded from the network; offline, the page still works but is unstyled.
+
+## Experiments: vector vs graph retrieval
+
+A series of retrieval benchmarks comparing the vector index above with an LLM-extracted entity graph (`graph/`). Every run scores document-level relevance at `top_k=5` against a dataset frozen before either system was measured. The graph is built with `gpt-4o-mini` at temperature 0 and retrieved with depth-2 traversal from at most five lexically matched seed entities.
+
+| Experiment | Corpus | Questions | Recall@5 (vector / graph) | Multi-hop Recall@5 (vector / graph) | Takeaway | Details |
+| --- | --- | ---: | ---: | ---: | --- | --- |
+| Baseline | 9 documents in `docs/` | 24 | 0.958 / 0.604 | 1.000 / 0.688 | Vector ahead in every category | `eval/results/comparison.csv`, `eval/results/graph_failure_analysis.md` |
+| Larger synthetic | 100 documents (10 projects × 10 topics) | 60 | 0.906 / 0.458 | 0.867 / 0.550 | Vector ahead in every category | `experiments/large_synthetic_corpus/results/comparison.md` |
+| Hard multi-hop | 32 one-chunk documents; chains of 2–3 documents whose intermediates are not named in the question | 24 | 0.743 / 0.319 | 0.486 / 0.222 | Vector still ahead; factual tied at 1.000 | `experiments/hard_multihop_corpus/results/comparison.md` |
+| Entity chain | 12 one-chunk documents in four researcher → project → company → product chains | 12 | 0.889 / 1.000 | 0.667 / 1.000 | First graph win; template-generated, four questions per category | `experiments/entity_chain_corpus/results/comparison.md` |
+| Semantic seeds | Same as baseline; seeds chosen by embedding similarity instead of substring match | 24 | 0.958 / 0.667 | 1.000 / 0.625 | Relationship questions improve, multi-hop drops | branch `experiment/semantic-seed-matching` |
+
+The graph only overtook vector retrieval on a corpus built so that the answer chain's middle documents share no vocabulary with the question. Each `comparison.md` lists the caveats for its run; raw per-question outputs and extraction caches are kept locally and are not committed.
