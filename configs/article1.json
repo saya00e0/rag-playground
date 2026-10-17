@@ -1,0 +1,33 @@
+{
+  "experiment": "article1-retrieval-routing",
+  "dataset_version": "article1-v2",
+  "dataset_path": "experiments/article1/dataset.jsonl",
+  "corpus_dir": "experiments/article1/corpus",
+  "cache_dir": "experiments/article1/cache",
+  "output_dir": "results/article1/v2",
+  "seed": 20261006,
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "temperature": 0,
+    "max_output_tokens": 400
+  },
+  "embedding_model": "text-embedding-3-small",
+  "chunk_size": 800,
+  "chunk_overlap": 100,
+  "retrieval_top_k": 4,
+  "retrievers": ["bm25", "vector", "graph", "pageindex"],
+  "bm25": {"k1": 1.5, "b": 0.75},
+  "graph": {"traversal_depth": 2, "max_seed_entities": 5, "max_extraction_chunks": 120},
+  "pageindex": {"max_unit_chars": 6000},
+  "agent": {"max_switches": 2, "max_context_chars_per_item": 1500},
+  "oracle": {
+    "answer_oracle": "set of retrievers with the highest answer_score; empty when every retriever scores 0",
+    "routing_accuracy_scope": "routing-sensitive queries (some but not all retrievers answer correctly) are the primary scope; all-correct and none-correct queries are reported separately"
+  },
+  "pricing_usd_per_1m_tokens": {
+    "gpt-4o-mini": {"input": 0.15, "output": 0.60},
+    "text-embedding-3-small": {"input": 0.02, "output": 0.0}
+  },
+  "budget_usd": 10.0
+}
