@@ -1,0 +1,110 @@
+{
+  "started_at": "2026-10-06T09:21:13.886357+00:00",
+  "git_commit": "621b672d3153c02b7b60b2ca5cdd4ebc64130e54",
+  "config": {
+    "experiment": "article1-retrieval-routing",
+    "dataset_version": "article1-v2",
+    "dataset_path": "experiments/article1/dataset.jsonl",
+    "corpus_dir": "experiments/article1/corpus",
+    "cache_dir": "experiments/article1/cache",
+    "output_dir": "results/article1/v2",
+    "seed": 20261006,
+    "llm": {
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "temperature": 0,
+      "max_output_tokens": 400
+    },
+    "embedding_model": "text-embedding-3-small",
+    "chunk_size": 800,
+    "chunk_overlap": 100,
+    "retrieval_top_k": 4,
+    "retrievers": [
+      "bm25",
+      "vector",
+      "graph",
+      "pageindex"
+    ],
+    "bm25": {
+      "k1": 1.5,
+      "b": 0.75
+    },
+    "graph": {
+      "traversal_depth": 2,
+      "max_seed_entities": 5,
+      "max_extraction_chunks": 120
+    },
+    "pageindex": {
+      "max_unit_chars": 6000
+    },
+    "agent": {
+      "max_switches": 2,
+      "max_context_chars_per_item": 1500
+    },
+    "oracle": {
+      "answer_oracle": "set of retrievers with the highest answer_score; empty when every retriever scores 0",
+      "routing_accuracy_scope": "routing-sensitive queries (some but not all retrievers answer correctly) are the primary scope; all-correct and none-correct queries are reported separately"
+    },
+    "pricing_usd_per_1m_tokens": {
+      "gpt-4o-mini": {
+        "input": 0.15,
+        "output": 0.6
+      },
+      "text-embedding-3-small": {
+        "input": 0.02,
+        "output": 0.0
+      }
+    },
+    "budget_usd": 10.0
+  },
+  "config_path": "configs/article1.json",
+  "dataset_sha256": "95792a57ddb2925a7c3b8158004919e0a0e323fb2f8d8530e289372dfab2a527",
+  "corpus_sha256": "8f89c95982464940fd7facbef8af04ba6eb9891d9ab51be76c4d7f1463093364",
+  "document_count": 44,
+  "chunk_count": 69,
+  "query_count": 36,
+  "limit": null,
+  "build": {
+    "build_seconds": 0.4232780840000001,
+    "vector_embedding_usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "calls": 0,
+      "latency_ms": 0.0,
+      "cost_usd": 0.0
+    },
+    "graph_statistics": {
+      "node_count": 250,
+      "edge_count": 279,
+      "relation_types": [
+        "affects",
+        "depends_on",
+        "has_status",
+        "measures",
+        "notifies",
+        "reports_to",
+        "requires",
+        "responsible_for",
+        "reviews",
+        "routes_to",
+        "scheduled_for",
+        "targets",
+        "uses"
+      ],
+      "connected_components": 33,
+      "average_degree": 2.232,
+      "isolated_node_count": 17
+    },
+    "graph_new_extraction_calls": 0,
+    "graph_extraction_cost_note": "extraction calls go through graph/extractor.py and are not token-metered here"
+  },
+  "finished_at": "2026-10-06T09:29:05.717604+00:00",
+  "status": "completed",
+  "total_usage": {
+    "input_tokens": 183385,
+    "output_tokens": 18692,
+    "calls": 429,
+    "latency_ms": 470818.73237500037,
+    "cost_usd": 0.03863351000000001
+  }
+}
