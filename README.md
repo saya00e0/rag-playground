@@ -196,3 +196,23 @@ A series of retrieval benchmarks comparing the vector index above with an LLM-ex
 | Semantic seeds | Same as baseline; seeds chosen by embedding similarity instead of substring match | 24 | 0.958 / 0.667 | 1.000 / 0.625 | Relationship questions improve, multi-hop drops | branch `experiment/semantic-seed-matching` |
 
 The graph only overtook vector retrieval on a corpus built so that the answer chain's middle documents share no vocabulary with the question. Each `comparison.md` lists the caveats for its run; raw per-question outputs and extraction caches are kept locally and are not committed.
+
+## Experiment: can an LLM choose the retrieval strategy? (article1)
+
+This experiment asks whether a router that sees only the query can pick the right retriever among BM25, vector search, graph retrieval and a simplified PageIndex-style table-of-contents navigator. The point is how hard the *choice* is, not which retriever is strongest. It is separate from the demo app and never touches `chroma_db/` or the `documents` collection.
+
+- **Corpus and queries:** `experiments/article1/`: 44 fictional English documents and 36 queries (keyword/exact, paraphrase, relationship, multi-hop, reasoning-heavy and long-document navigation, 6 each), each with a gold answer and key facts. Corpus changes are recorded in `experiments/article1/CHANGELOG.md`.
+- **Policies:** fixed vector, a keyword rule router, an LLM router (query text plus retriever descriptions only, no query-type labels), an agent (LLM router, then a sufficiency check and up to two retriever switches), and an after-the-fact oracle.
+- **Code:** `src/retrievers/`, `src/policies/`, `src/evaluation/`; configuration lives in `configs/article1.json` (model, embedding model, chunking, top-k, seed, temperature, budget).
+- **PageIndex:** a single LLM call over document titles and section headings, not the PageIndex library. This avoids an external dependency.
+
+Re-run the experiment, then the analysis (the analysis makes no API calls):
+
+```bash
+.venv/bin/python experiments/run_article1.py --config configs/article1.json
+.venv/bin/python scripts/analyze_article1.py --results-dir results/article1/v2
+```
+
+The run costs about $0.04 with `gpt-4o-mini` and stops if the configured budget is exceeded. `--limit N` runs only the first N queries, and `--output-dir` writes elsewhere. The Chroma index and graph extraction cache are rebuilt under the ignored `experiments/article1/cache/`.
+
+Results for three runs of the v2 corpus are in `results/article1/v2*/`; the superseded v1 run is in `results/article1/v1/`. Each directory holds `raw_results.jsonl` (query × policy), `retriever_runs.jsonl` (query × retriever), `summary.csv`, `routing_analysis.md`, `failure_cases.md`, charts and `run_metadata.json`. Findings and limitations are in `results/article1/article_notes.md`. In short: the LLM router sent about 75% of queries to the same strategy with ~0.9 confidence whether right or wrong, and matched the fixed-vector baseline's accuracy (0.78) at ~4x the cost. On this small, single-author corpus, the differences between policies are within run-to-run noise.
